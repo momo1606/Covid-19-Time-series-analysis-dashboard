@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+/*window.onload*/
+var charty = function () {
+    var x=document.getElementById("abc").value;
+
+    //var  x=document.getElementById('abc').value;
+    var now = new Date(2020,7,30);
+    var daysOfYear = [];
+    for (var d = new Date(2020, 3, 1); d <= now; d.setDate(d.getDate() + 1)) {
+    daysOfYear.push(new Date(d));
+}
+   // var dates=getDates(new Date(2020,4,1),new Date(2020,6,30));
+    document.getElementById("demo").innerHTML=daysOfYear[60][0];
+    var arr=[];
+    for(var i=0;i<30+x; i++){
+        var obj={x: i , y: 100 };
+        arr.push(obj);
+    }
+
+var momo=[{
+		name: "Covid cases",
+		type: "spline",
+		yValueFormatString: "#0.## °C",
+		showInLegend: true,
+		dataPoints: arr
+	}];
+//var momo2=momo;
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title:{
+		text: "Daily High Temperature at Different Beaches"
+	},
+	axisX: {
+		valueFormatString: "DD MMM,YY"
+	},
+	axisY: {
+		title: "Cases",
+		includeZero: false,
+		//suffix: " °C"
+	},
+	legend:{
+		cursor: "pointer",
+		fontSize: 16,
+		itemclick: toggleDataSeries
+	},
+	toolTip:{
+		shared: true
+	},
+	data: momo
+});
+chart.render();
+
+function toggleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+
+
+
+}
+</script>
+</head>
+<body>
+<p id="demo"></p>
+<input type="text" id="abc">
+
+<button onclick="charty()">Click me</button>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</body>
+</html>
