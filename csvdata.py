@@ -1,30 +1,16 @@
 import pandas as pd
 
 
-def fetchpred():
+def fetchpred(typ='cin'):
     dfcovid = pd.read_csv("covid.csv")
-    df = pd.read_csv("cin_pred.csv")
-    predict=df.to_dict()
-    #dates=pd.date_range(start='4/1/2020', end='6/30/2020').to_list
-
-    sarima=[]
-    pyhat=[]
-    pyl=[]
-    pyu = []
-    for j in dfcovid['cin']:
-        sarima.append(j)
-        pyhat.append(j)
-        pyl.append(j)
-        pyu.append(j)
-
-    for i in predict['sarima']:
-        sarima.append(i)
-    for i in predict['pyhat']:
-        pyhat.append(i)
-    for i in predict['pyl']:
-        pyl.append(i)
-    for i in predict['pyu']:
-        pyu.append(i)
-
-
+    df = pd.read_csv(str(typ)+"_pred.csv")
+    temp = dfcovid[str(typ)].tolist()
+    sarima=temp.copy()
+    pyhat=temp.copy()
+    pyl=temp.copy()
+    pyu = temp.copy()
+    sarima=sarima+df.sarima.tolist()
+    pyhat=pyhat+df.pyhat.to_list()
+    pyl=pyl+df.pyl.to_list()
+    pyu=pyu+df.pyu.to_list()
     return [sarima,pyhat,pyl,pyu]

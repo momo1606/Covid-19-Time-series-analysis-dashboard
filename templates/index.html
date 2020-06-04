@@ -5,33 +5,34 @@
 /*window.onload*/
 var charty = function () {
     var x=document.getElementById("abc").value;
+    document.getElementById("demo").innerHTML=x;
 
-    //var  x=document.getElementById('abc').value;
-    var now = new Date(2020,7,30);
-    var daysOfYear = [];
-    for (var d = new Date(2020, 3, 1); d <= now; d.setDate(d.getDate() + 1)) {
-    daysOfYear.push(new Date(d));
-}
-   // var dates=getDates(new Date(2020,4,1),new Date(2020,6,30));
-    document.getElementById("demo").innerHTML=daysOfYear[60][0];
+    var d = new Date(2020, 3, 1);
+
+    var sarima_cim_j ={{ sarima_cin|safe }}
     var arr=[];
-    for(var i=0;i<30+x; i++){
-        var obj={x: i , y: 100 };
+    var enddate=new Date(2020,6,1);
+    for(var i=0;i<30; i++)
+    {
+        if (d === enddate) {break;}
+        if (i < 10) {var obj={x: new Date(d), y: sarima_cim_j[i] };}
+        else {var obj={x: new Date(d), y: pyhat[i] };}
         arr.push(obj);
+        d.setDate(d.getDate() + 1)
     }
 
 var momo=[{
 		name: "Covid cases",
 		type: "spline",
-		yValueFormatString: "#0.## °C",
+		yValueFormatString: "#0.## cases",
 		showInLegend: true,
 		dataPoints: arr
 	}];
-//var momo2=momo;
 var chart = new CanvasJS.Chart("chartContainer", {
+
 	animationEnabled: true,
 	title:{
-		text: "Daily High Temperature at Different Beaches"
+		text: "Covid Cases In India"
 	},
 	axisX: {
 		valueFormatString: "DD MMM,YY"
@@ -39,7 +40,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	axisY: {
 		title: "Cases",
 		includeZero: false,
-		//suffix: " °C"
+		//suffix: " Cases"
 	},
 	legend:{
 		cursor: "pointer",
@@ -62,9 +63,6 @@ function toggleDataSeries(e){
 	}
 	chart.render();
 }
-
-
-
 }
 </script>
 </head>
@@ -74,7 +72,6 @@ function toggleDataSeries(e){
 
 <button onclick="charty()">Click me</button>
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>*/
 </body>
 </html>
