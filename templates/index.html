@@ -1,22 +1,23 @@
 <!DOCTYPE HTML>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <head>
 <script>
 /*window.onload*/
 var charty = function () {
     var x=document.getElementById("abc").value;
+    var d = new Date("2020-4-1");
     document.getElementById("demo").innerHTML=x;
-
-    var d = new Date(2020, 3, 1);
-
-    var sarima_cim_j ={{ sarima_cin|safe }}
     var arr=[];
-    var enddate=new Date(2020,6,1);
-    for(var i=0;i<30; i++)
+    var enddate=new Date("2020-7-1");
+    var sarima_cin_j={{ sarima_cin|safe }}
+    var pyhat_cin_j={{ pyhat_cin|safe }}
+    for(var i=0;i<61+parseInt(x); i++)
     {
-        if (d === enddate) {break;}
-        if (i < 10) {var obj={x: new Date(d), y: sarima_cim_j[i] };}
-        else {var obj={x: new Date(d), y: pyhat[i] };}
+        if (d > enddate) {break;}
+        if (i < 10) { var obj={x: new Date(d), y: sarima_cin_j[i] }; }
+        else { var obj={x: new Date(d), y: pyhat_cin_j[i] };}
         arr.push(obj);
         d.setDate(d.getDate() + 1)
     }
@@ -67,11 +68,15 @@ function toggleDataSeries(e){
 </script>
 </head>
 <body>
-<p id="demo"></p>
-<input type="text" id="abc">
+<div class="w3-row">
+  <div class="w3-third">
+    <p id="demo"></p>
+    <input type="text" id="abc">
+    <button onclick="charty()">Click me</button>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </div>
+</div>
 
-<button onclick="charty()">Click me</button>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>*/
 </body>
 </html>
