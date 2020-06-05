@@ -11,42 +11,47 @@ window.onload = function() {
   chartydm(0);
   chartygm(0);
   chartygf(0);
-
 };
 var cinup = function (){
     var x=document.getElementById("abc").value;
     var sarima_cin_j={{ sarima_cin|safe }}
-    document.getElementById("demo").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    document.getElementById("demo").innerHTML="Predicted Cases In India by Day "+String(x);
+    document.getElementById("ppp1").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     charty(x);
 };
 var cmhup = function (){
     var x=document.getElementById("abc2").value;
     var sarima_cin_j={{ sarima_cmh|safe }}
-    document.getElementById("demo2").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    document.getElementById("demo2").innerHTML="Predicted Cases In Maharashtra by Day "+String(x);
+    document.getElementById("ppp2").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     chartym(x);
 };
 var dinup = function (){
     var x=document.getElementById("abc3").value;
     var sarima_cin_j={{ sarima_din|safe }}
-    document.getElementById("demo3").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    document.getElementById("demo3").innerHTML="Predicted Deaths in India by Day "+String(x);
+    document.getElementById("ppp3").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     chartyd(x);
 };
 var dmhup = function (){
     var x=document.getElementById("abc4").value;
     var sarima_cin_j={{ sarima_dmh|safe }}
-    document.getElementById("demo4").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    document.getElementById("demo4").innerHTML="Predicted Deaths in Maharashtra by Day "+String(x);
+    document.getElementById("ppp4").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     chartydm(x);
 };
 var gmaleup = function (){
     var x=document.getElementById("abc5").value;
     var sarima_cin_j={{ sarima_gmale|safe }}
-    document.getElementById("demo5").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    document.getElementById("demo5").innerHTML="Predicted value of Males infected by Day "+String(x);
+    document.getElementById("ppp5").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     chartygm(x);
 };
 var gfemaleup = function (){
     var x=document.getElementById("abc6").value;
     var sarima_cin_j={{ sarima_gfemale|safe }}
-    document.getElementById("demo6").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    document.getElementById("demo6").innerHTML="Predicted value of Females infected by Day "+String(x);
+    document.getElementById("ppp6").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     chartygf(x);
 };
 function charty(x) {
@@ -63,7 +68,7 @@ function charty(x) {
     {
         if (d > enddate) {break;}
         if (i <= 71) { var obj={x: new Date(d), y: sarima_cin_j[i] }; }
-        else { var obj={x: new Date(d), y: pyhat_cin_j[i] };}
+        else { var obj={x: new Date(d), y: pyhat_cin_j[i] , lineColor:"red" };}
         arr.push(obj);
         d.setDate(d.getDate() + 1)
     }
@@ -71,9 +76,10 @@ function charty(x) {
 
 var momo=[{
 		name: "Date",
-		type: "spline",
+		type: "area",
 		yValueFormatString: "#0.## cases",
 		showInLegend: true,
+        color:"#be83f6",
 		dataPoints: arr
 	}];
 var chart = new CanvasJS.Chart("chartContainer1", {
@@ -82,7 +88,7 @@ var chart = new CanvasJS.Chart("chartContainer1", {
     zoomEnabled: true,
     theme:"light2",
 	title:{
-		text: "Covid Cases In India"
+		text: "Total Cases of Covid-19 In India"
 	},
 	axisX: {
 		valueFormatString: "DD MMM,YY"
@@ -135,9 +141,10 @@ function chartym(x) {
 
 var momo=[{
 		name: "Date",
-		type: "spline",
+		type: "area",
 		yValueFormatString: "#0.## cases",
 		showInLegend: true,
+        color:"#f96ac0",
 		dataPoints: arr
 	}];
 var chart = new CanvasJS.Chart("chartContainer2", {
@@ -146,7 +153,7 @@ var chart = new CanvasJS.Chart("chartContainer2", {
     zoomEnabled: true,
     theme:"light2",
 	title:{
-		text: "Covid Cases In Maharashtra"
+		text: "Total Cases of COVID-19 In Maharashtra"
 	},
 	axisX: {
 		valueFormatString: "DD MMM,YY"
@@ -199,9 +206,10 @@ function chartyd(x) {
 
 var momo=[{
 		name: "Date",
-		type: "spline",
+		type: "area",
 		yValueFormatString: "#0.## deaths",
 		showInLegend: true,
+        color:"#ff6681",
 		dataPoints: arr
 	}];
 var chart = new CanvasJS.Chart("chartContainer3", {
@@ -210,7 +218,7 @@ var chart = new CanvasJS.Chart("chartContainer3", {
     zoomEnabled: true,
     theme:"light2",
 	title:{
-		text: "Deaths due to COVID In India"
+		text: "Deaths in India due to COVID"
 	},
 	axisX: {
 		valueFormatString: "DD MMM,YY"
@@ -263,9 +271,10 @@ function chartydm(x) {
 
 var momo=[{
 		name: "Date",
-		type: "spline",
+		type: "area",
 		yValueFormatString: "#0.## deaths",
 		showInLegend: true,
+        color:"#f97c48",
 		dataPoints: arr
 	}];
 var chart = new CanvasJS.Chart("chartContainer4", {
@@ -274,7 +283,7 @@ var chart = new CanvasJS.Chart("chartContainer4", {
     zoomEnabled: true,
     theme:"light2",
 	title:{
-		text: "Deaths in Maharashtra due to COVID"
+		text: "Deaths in Maharashtra due to COVID-19"
 	},
 	axisX: {
 		valueFormatString: "DD MMM,YY"
@@ -327,9 +336,10 @@ function chartygm(x) {
 
 var momo=[{
 		name: "Date",
-		type: "spline",
+		type: "area",
 		yValueFormatString: "#0.## cases",
 		showInLegend: true,
+        color:'#cf971b',
 		dataPoints: arr
 	}];
 var chart = new CanvasJS.Chart("chartContainer5", {
@@ -338,7 +348,7 @@ var chart = new CanvasJS.Chart("chartContainer5", {
     zoomEnabled: true,
     theme:"light2",
 	title:{
-		text: "Males Infected with COVID-19"
+		text: "Males Infected with Covid-19"
 	},
 	axisX: {
 		valueFormatString: "DD MMM,YY"
@@ -391,9 +401,10 @@ function chartygf(x) {
 
 var momo=[{
 		name: "Date",
-		type: "spline",
+		type: "area",
 		yValueFormatString: "#0.## cases",
 		showInLegend: true,
+        color:'#94ac23',
 		dataPoints: arr
 	}];
 var chart = new CanvasJS.Chart("chartContainer6", {
@@ -434,38 +445,182 @@ function toggleDataSeries(e){
 	chart.render();
 }
 }
+
+
+function openNav() {
+  document.getElementById("myNav1").style.display = "block";
+
+
+}
+
+function closeNav() {
+  document.getElementById("myNav1").style.display = "none";
+}
 </script>
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #BE83F6;
+}
+
+.button1:hover {
+  background-color: #BE83F6;
+  color: black;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #f96ac0;
+}
+
+.button2:hover {
+  background-color: #f96ac0;
+  color: black;
+}
+.button3 {
+  background-color: white;
+  color: black;
+  border: 2px solid #ff6681;
+}
+
+.button3:hover {
+  background-color: #ff6681;
+  color: black;
+}
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #f97c48;
+}
+
+.button4:hover {
+  background-color: #f97c48;
+  color: black;
+}
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #cf971b;
+}
+
+.button5:hover {
+  background-color: #cf971b;
+  color: black;
+}
+.button6 {
+  background-color: white;
+  color: black;
+  border: 2px solid #94ac23;
+}
+
+.button6:hover {
+  background-color: #94ac23;
+  color: black;
+}
+
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.8);
+}
+
+.overlay-content {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
 </head>
 <body>
-<header style="padding-left: 10%;padding-bottom: 20px">
-    <img src="https://scaai.edu.in/assets/images/logo1.png" width="90%">
+<header style="text-align: center;margin-bottom: 3.5%; background: white" >
+    <img src="https://www.siu.edu.in/images/discipline-logo.jpg" style="float:left;padding-left: 5%;padding-top: 0.5%">
+    <h2 style="font-weight: bolder;color: #d50300 ; margin-bottom: 20px">SYMBIOSIS INTERNATIONAL (DEEMED UNIVERSITY) </h2>
+    <h2 style="font-weight: bolder;color: #D50300">SYMBIOSIS CENTRE FOR APPLIED ARTIFICIAL INTELLIGENCE </h2>
+    <hr>
 </header>
-<div class="w3-row" >
-  <div class="w3-third" style="padding: 20px">
-    <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  </div>
+</div>
+
+<div class="w3-row"  >
+  <div class="w3-third " style="padding: 20px;">
+    <div id="chartContainer1" style="height: 370px; width: 100%;"  onclick="openNav()"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <div style="margin-left: 30% ">
-        <p id="demo"></p>
-        Predict for <input type="number" placeholder="e.g. 5th " id="abc">
-        <button onclick="cinup()"> Day</button>
+    <div style="text-align: center">
+        <p id="demo"></p><h3 id="ppp1" style="color: #BE83F6"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #BE83F6;border-radius: 4px;">
+        <button class="button button1" onclick="cinup()"> Predict </button>
     </div>
   </div>
-    <div class="w3-third" style="padding: 20px">
+    <div class="w3-third" id="cert" style="padding: 20px">
     <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <div style="margin-left: 30% ">
-        <p id="demo2"></p>
-        Predict for <input type="number" placeholder="e.g. 5 " id="abc2">
-        <button onclick="cmhup()">Days</button>
+    <div style="text-align: center">
+        <p id="demo2"></p><h3 id="ppp2" style="color: #f96ac0"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc2" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #f96ac0;border-radius: 4px;">
+        <button class="button button2" onclick="cmhup()"> Predict </button>
     </div>
   </div>
-    <div class="w3-third" style="padding: 20px">
+    <div class="w3-third" id="cert" style="padding: 20px">
     <div id="chartContainer3" style="height: 370px; width: 100%;"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <div style="margin-left: 30% ">
-        <p id="demo3"></p>
-        Predict for <input type="number" placeholder="e.g. 5 " id="abc3">
-        <button onclick="dinup()">Days</button>
+    <div style="text-align: center">
+        <p id="demo3"></p><h3 id="ppp3" style="color: #ff6681"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc3" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #ff6681;border-radius: 4px;">
+        <button class="button button3" onclick="dinup()"> Predict </button>
     </div>
   </div>
 </div>
@@ -474,28 +629,31 @@ function toggleDataSeries(e){
   <div class="w3-third" style="padding: 20px">
     <div id="chartContainer4" style="height: 370px; width: 100%;"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <div style="margin-left: 30% ">
-        <p id="demo4"></p>
-        Predict for <input type="number" placeholder="e.g. 5 " id="abc4">
-        <button onclick="dmhup()">Days</button>
+    <div style="text-align: center">
+        <p id="demo4"></p><h3 id="ppp4" style="color: #f97c48"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc4" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #f97c48;border-radius: 4px;">
+        <button class="button button4" onclick="dmhup()"> Predict </button>
     </div>
   </div>
     <div class="w3-third" style="padding: 20px">
     <div id="chartContainer5" style="height: 370px; width: 100%;"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        <div style="margin-left: 30% ">
-            <p id="demo5"></p>
-            Predict for <input type="number" placeholder="e.g. 5 " id="abc5">
-            <button onclick="gmaleup()">Days</button>
-        </div>
+        <div style="text-align: center">
+        <p id="demo5"></p><h3 id="ppp5" style="color: #cf971b"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc5" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #cf971b;border-radius: 4px;">
+        <button class="button button5" onclick="gmaleup()"> Predict </button>
+    </div>
   </div>
     <div class="w3-third" style="padding: 20px">
     <div id="chartContainer6" style="height: 370px; width: 100%;"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <div style="margin-left: 30% ">
-        <p id="demo6"></p>
-        Predict for <input type="number" placeholder="e.g. 5 " id="abc6">
-        <button onclick="gfemaleup()">Days</button>
+    <div style="text-align: center">
+        <p id="demo6"></p><h3 id="ppp6" style="color: #94ac23"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc6" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #94ac23;border-radius: 4px;">
+        <button class="button button6" onclick="gfemaleup()"> Predict </button>
     </div>
   </div>
 </div>
