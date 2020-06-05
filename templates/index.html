@@ -4,36 +4,405 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <head>
 <script>
-/*window.onload*/
-var charty = function () {
+window.onload = function() {
+  charty(0);
+  chartym(0);
+  chartyd(0);
+  chartydm(0);
+  chartygm(0);
+  chartygf(0);
+
+};
+var cinup = function (){
     var x=document.getElementById("abc").value;
+    var sarima_cin_j={{ sarima_cin|safe }}
+    document.getElementById("demo").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    charty(x);
+};
+var cmhup = function (){
+    var x=document.getElementById("abc2").value;
+    var sarima_cin_j={{ sarima_cmh|safe }}
+    document.getElementById("demo2").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    chartym(x);
+};
+var dinup = function (){
+    var x=document.getElementById("abc3").value;
+    var sarima_cin_j={{ sarima_din|safe }}
+    document.getElementById("demo3").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    chartyd(x);
+};
+var dmhup = function (){
+    var x=document.getElementById("abc4").value;
+    var sarima_cin_j={{ sarima_dmh|safe }}
+    document.getElementById("demo4").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    chartydm(x);
+};
+var gmaleup = function (){
+    var x=document.getElementById("abc5").value;
+    var sarima_cin_j={{ sarima_gmale|safe }}
+    document.getElementById("demo5").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    chartygm(x);
+};
+var gfemaleup = function (){
+    var x=document.getElementById("abc6").value;
+    var sarima_cin_j={{ sarima_gfemale|safe }}
+    document.getElementById("demo6").innerHTML="Predicted value "+String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    chartygf(x);
+};
+function charty(x) {
+    if (x === undefined) {
+    x = 0;
+    }
     var d = new Date("2020-4-1");
-    document.getElementById("demo").innerHTML=x;
+
     var arr=[];
-    var enddate=new Date("2020-7-1");
+    var enddate=new Date("2020-6-30");
     var sarima_cin_j={{ sarima_cin|safe }}
     var pyhat_cin_j={{ pyhat_cin|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
         if (d > enddate) {break;}
-        if (i < 10) { var obj={x: new Date(d), y: sarima_cin_j[i] }; }
+        if (i <= 71) { var obj={x: new Date(d), y: sarima_cin_j[i] }; }
         else { var obj={x: new Date(d), y: pyhat_cin_j[i] };}
         arr.push(obj);
         d.setDate(d.getDate() + 1)
     }
 
+
 var momo=[{
-		name: "Covid cases",
+		name: "Date",
 		type: "spline",
 		yValueFormatString: "#0.## cases",
 		showInLegend: true,
 		dataPoints: arr
 	}];
-var chart = new CanvasJS.Chart("chartContainer", {
+var chart = new CanvasJS.Chart("chartContainer1", {
 
 	animationEnabled: true,
+    zoomEnabled: true,
+    theme:"light2",
 	title:{
 		text: "Covid Cases In India"
+	},
+	axisX: {
+		valueFormatString: "DD MMM,YY"
+	},
+	axisY: {
+		title: "Cases",
+		includeZero: false,
+		//suffix: " Cases"
+	},
+	legend:{
+		cursor: "pointer",
+		fontSize: 16,
+		itemclick: toggleDataSeries
+	},
+	toolTip:{
+		shared: true
+	},
+	data: momo
+});
+chart.render();
+
+function toggleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+}
+function chartym(x) {
+    if (x === undefined) {
+    x = 0;
+    }
+    var d = new Date("2020-4-1");
+
+    var arr=[];
+    var enddate=new Date("2020-6-10");
+    var sarima_cmh_j={{ sarima_cmh|safe }}
+    var pyhat_cmh_j={{ pyhat_cmh|safe }}
+    for(var i=0;i<61+parseInt(x); i++)
+    {
+        if (d > enddate) {break;}
+        if (i <= 71) { var obj={x: new Date(d), y: sarima_cmh_j[i] }; }
+        else { var obj={x: new Date(d), y: pyhat_cmh_j[i] };}
+        arr.push(obj);
+        d.setDate(d.getDate() + 1)
+    }
+
+var momo=[{
+		name: "Date",
+		type: "spline",
+		yValueFormatString: "#0.## cases",
+		showInLegend: true,
+		dataPoints: arr
+	}];
+var chart = new CanvasJS.Chart("chartContainer2", {
+
+	animationEnabled: true,
+    zoomEnabled: true,
+    theme:"light2",
+	title:{
+		text: "Covid Cases In Maharashtra"
+	},
+	axisX: {
+		valueFormatString: "DD MMM,YY"
+	},
+	axisY: {
+		title: "Cases",
+		includeZero: false,
+		//suffix: " Cases"
+	},
+	legend:{
+		cursor: "pointer",
+		fontSize: 16,
+		itemclick: toggleDataSeries
+	},
+	toolTip:{
+		shared: true
+	},
+	data: momo
+});
+chart.render();
+
+function toggleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+}
+function chartyd(x) {
+    if (x === undefined) {
+    x = 0;
+    }
+    var d = new Date("2020-4-1");
+
+    var arr=[];
+    var enddate=new Date("2020-6-10");
+    var sarima_din_j={{ sarima_din|safe }}
+    var pyhat_din_j={{ pyhat_din|safe }}
+    for(var i=0;i<61+parseInt(x); i++)
+    {
+        if (d > enddate) {break;}
+        if (i <= 71) { var obj={x: new Date(d), y: sarima_din_j[i] }; }
+        else { var obj={x: new Date(d), y: pyhat_din_j[i] };}
+        arr.push(obj);
+        d.setDate(d.getDate() + 1)
+    }
+
+var momo=[{
+		name: "Date",
+		type: "spline",
+		yValueFormatString: "#0.## deaths",
+		showInLegend: true,
+		dataPoints: arr
+	}];
+var chart = new CanvasJS.Chart("chartContainer3", {
+
+	animationEnabled: true,
+    zoomEnabled: true,
+    theme:"light2",
+	title:{
+		text: "Deaths due to COVID In India"
+	},
+	axisX: {
+		valueFormatString: "DD MMM,YY"
+	},
+	axisY: {
+		title: "Deaths",
+		includeZero: false,
+		//suffix: " Cases"
+	},
+	legend:{
+		cursor: "pointer",
+		fontSize: 16,
+		itemclick: toggleDataSeries
+	},
+	toolTip:{
+		shared: true
+	},
+	data: momo
+});
+chart.render();
+
+function toggleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+}
+function chartydm(x) {
+    if (x === undefined) {
+    x = 0;
+    }
+    var d = new Date("2020-4-1");
+
+    var arr=[];
+    var enddate=new Date("2020-6-10");
+    var sarima_dmh_j={{ sarima_dmh|safe }}
+    var pyhat_dmh_j={{ pyhat_dmh|safe }}
+    for(var i=0;i<61+parseInt(x); i++)
+    {
+        if (d > enddate) {break;}
+        if (i <= 71) { var obj={x: new Date(d), y: sarima_dmh_j[i] }; }
+        else { var obj={x: new Date(d), y: pyhat_dmh_j[i] };}
+        arr.push(obj);
+        d.setDate(d.getDate() + 1)
+    }
+
+var momo=[{
+		name: "Date",
+		type: "spline",
+		yValueFormatString: "#0.## deaths",
+		showInLegend: true,
+		dataPoints: arr
+	}];
+var chart = new CanvasJS.Chart("chartContainer4", {
+
+	animationEnabled: true,
+    zoomEnabled: true,
+    theme:"light2",
+	title:{
+		text: "Deaths in Maharashtra due to COVID"
+	},
+	axisX: {
+		valueFormatString: "DD MMM,YY"
+	},
+	axisY: {
+		title: "Deaths",
+		includeZero: false,
+		//suffix: " Cases"
+	},
+	legend:{
+		cursor: "pointer",
+		fontSize: 16,
+		itemclick: toggleDataSeries
+	},
+	toolTip:{
+		shared: true
+	},
+	data: momo
+});
+chart.render();
+
+function toggleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+}
+function chartygm(x) {
+    if (x === undefined) {
+    x = 0;
+    }
+    var d = new Date("2020-4-1");
+
+    var arr=[];
+    var enddate=new Date("2020-6-10");
+    var sarima_gmale_j={{ sarima_gmale|safe }}
+    var pyhat_gmale_j={{ pyhat_gmale|safe }}
+    for(var i=0;i<61+parseInt(x); i++)
+    {
+        if (d > enddate) {break;}
+        if (i <= 71) { var obj={x: new Date(d), y: sarima_gmale_j[i] }; }
+        else { var obj={x: new Date(d), y: pyhat_gmale_j[i] };}
+        arr.push(obj);
+        d.setDate(d.getDate() + 1)
+    }
+
+var momo=[{
+		name: "Date",
+		type: "spline",
+		yValueFormatString: "#0.## cases",
+		showInLegend: true,
+		dataPoints: arr
+	}];
+var chart = new CanvasJS.Chart("chartContainer5", {
+
+	animationEnabled: true,
+    zoomEnabled: true,
+    theme:"light2",
+	title:{
+		text: "Males Infected with COVID-19"
+	},
+	axisX: {
+		valueFormatString: "DD MMM,YY"
+	},
+	axisY: {
+		title: "Cases",
+		includeZero: false,
+		//suffix: " Cases"
+	},
+	legend:{
+		cursor: "pointer",
+		fontSize: 16,
+		itemclick: toggleDataSeries
+	},
+	toolTip:{
+		shared: true
+	},
+	data: momo
+});
+chart.render();
+
+function toggleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+}
+function chartygf(x) {
+    if (x === undefined) {
+    x = 0;
+    }
+    var d = new Date("2020-4-1");
+
+    var arr=[];
+    var enddate=new Date("2020-6-10");
+    var sarima_gfemale_j={{ sarima_gfemale|safe }}
+    var pyhat_gfemale_j={{ pyhat_gfemale|safe }}
+    for(var i=0;i<61+parseInt(x); i++)
+    {
+        if (d > enddate) {break;}
+        if (i <= 71) { var obj={x: new Date(d), y: sarima_gfemale_j[i] }; }
+        else { var obj={x: new Date(d), y: pyhat_gfemale_j[i] };}
+        arr.push(obj);
+        d.setDate(d.getDate() + 1)
+    }
+
+var momo=[{
+		name: "Date",
+		type: "spline",
+		yValueFormatString: "#0.## cases",
+		showInLegend: true,
+		dataPoints: arr
+	}];
+var chart = new CanvasJS.Chart("chartContainer6", {
+
+	animationEnabled: true,
+    zoomEnabled: true,
+    theme:"light2",
+	title:{
+		text: "Females Infected with Covid-19"
 	},
 	axisX: {
 		valueFormatString: "DD MMM,YY"
@@ -68,13 +437,66 @@ function toggleDataSeries(e){
 </script>
 </head>
 <body>
-<div class="w3-row">
-  <div class="w3-third">
-    <p id="demo"></p>
-    <input type="text" id="abc">
-    <button onclick="charty()">Click me</button>
-    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<header style="padding-left: 10%;padding-bottom: 20px">
+    <img src="https://scaai.edu.in/assets/images/logo1.png" width="90%">
+</header>
+<div class="w3-row" >
+  <div class="w3-third" style="padding: 20px">
+    <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="margin-left: 30% ">
+        <p id="demo"></p>
+        Predict for <input type="number" placeholder="e.g. 5th " id="abc">
+        <button onclick="cinup()"> Day</button>
+    </div>
+  </div>
+    <div class="w3-third" style="padding: 20px">
+    <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="margin-left: 30% ">
+        <p id="demo2"></p>
+        Predict for <input type="number" placeholder="e.g. 5 " id="abc2">
+        <button onclick="cmhup()">Days</button>
+    </div>
+  </div>
+    <div class="w3-third" style="padding: 20px">
+    <div id="chartContainer3" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="margin-left: 30% ">
+        <p id="demo3"></p>
+        Predict for <input type="number" placeholder="e.g. 5 " id="abc3">
+        <button onclick="dinup()">Days</button>
+    </div>
+  </div>
+</div>
+<p style="margin-top:  100px"></p>
+<div class="w3-row" >
+  <div class="w3-third" style="padding: 20px">
+    <div id="chartContainer4" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="margin-left: 30% ">
+        <p id="demo4"></p>
+        Predict for <input type="number" placeholder="e.g. 5 " id="abc4">
+        <button onclick="dmhup()">Days</button>
+    </div>
+  </div>
+    <div class="w3-third" style="padding: 20px">
+    <div id="chartContainer5" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <div style="margin-left: 30% ">
+            <p id="demo5"></p>
+            Predict for <input type="number" placeholder="e.g. 5 " id="abc5">
+            <button onclick="gmaleup()">Days</button>
+        </div>
+  </div>
+    <div class="w3-third" style="padding: 20px">
+    <div id="chartContainer6" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="margin-left: 30% ">
+        <p id="demo6"></p>
+        Predict for <input type="number" placeholder="e.g. 5 " id="abc6">
+        <button onclick="gfemaleup()">Days</button>
+    </div>
   </div>
 </div>
 

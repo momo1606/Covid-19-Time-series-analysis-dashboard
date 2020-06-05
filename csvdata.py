@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def fetchpred(typ='cin'):
+def fetchpred(typ):
     dfcovid = pd.read_csv("covid.csv")
     df = pd.read_csv(str(typ)+"_pred.csv")
     temp = dfcovid[str(typ)].tolist()
