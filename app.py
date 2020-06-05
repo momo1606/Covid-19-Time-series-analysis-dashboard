@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     sarima_cin, pyhat_cin, pyl_cin, pyu_cin= csvdata.fetchpred('cin')
-
+    print(pyhat_cin)
     sarima_cmh, pyhat_cmh, pyl_cmh, pyu_cmh = csvdata.fetchpred('cmh')
     sarima_din, pyhat_din, pyl_din, pyu_din = csvdata.fetchpred('din')
     sarima_dmh, pyhat_dmh, pyl_dmh, pyu_dmh = csvdata.fetchpred('dmh')

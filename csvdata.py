@@ -6,9 +6,9 @@ def fetchpred(typ):
     df = pd.read_csv(str(typ)+"_pred.csv")
     temp = dfcovid[str(typ)].tolist()
     sarima=[]+temp
-    pyhat=[]+temp
-    pyl=[]+temp
-    pyu =[]+temp
+    pyhat=[]
+    pyl=[]
+    pyu =[]
     sarima=sarima+df.sarima.tolist()
     pyhat=pyhat+df.pyhat.to_list()
     pyl=pyl+df.pyl.to_list()

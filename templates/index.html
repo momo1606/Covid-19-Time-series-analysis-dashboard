@@ -15,43 +15,121 @@ window.onload = function() {
 var cinup = function (){
     var x=document.getElementById("abc").value;
     var sarima_cin_j={{ sarima_cin|safe }}
-    document.getElementById("demo").innerHTML="Predicted Cases In India by Day "+String(x);
-    document.getElementById("ppp1").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    var pyl_cin_j={{ pyl_cin|safe }}
+    var pyu_cin_j={{ pyu_cin|safe }}
+    if (x<11){
+        document.getElementById("demo").innerHTML="Predicted Cases In India by Day "+String(x);
+        document.getElementById("ppp1").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo").innerHTML="Predicted Cases In India by Day "+String(x)+" May Range from";
+        document.getElementById("ppp1").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp1").innerHTML=" ";
+    }
     charty(x);
 };
 var cmhup = function (){
     var x=document.getElementById("abc2").value;
     var sarima_cin_j={{ sarima_cmh|safe }}
-    document.getElementById("demo2").innerHTML="Predicted Cases In Maharashtra by Day "+String(x);
-    document.getElementById("ppp2").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    var pyl_cin_j={{ pyl_cmh|safe }}
+    var pyu_cin_j={{ pyu_cmh|safe }}
+    if (x<11){
+        document.getElementById("demo2").innerHTML="Predicted Cases In Maharashtra by Day "+String(x);
+        document.getElementById("ppp2").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo2").innerHTML="Predicted Cases In Maharashtra by Day "+String(x)+" May Range from";
+        document.getElementById("ppp2").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo2").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp2").innerHTML=" ";
+    }
     chartym(x);
 };
 var dinup = function (){
     var x=document.getElementById("abc3").value;
     var sarima_cin_j={{ sarima_din|safe }}
-    document.getElementById("demo3").innerHTML="Predicted Deaths in India by Day "+String(x);
-    document.getElementById("ppp3").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    var pyl_cin_j={{ pyl_din|safe }}
+    var pyu_cin_j={{ pyu_din|safe }}
+    if (x<11){
+        document.getElementById("demo3").innerHTML="Predicted Deaths In India by Day "+String(x);
+        document.getElementById("ppp3").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo3").innerHTML="Predicted Deaths In India by Day "+String(x)+" May Range from";
+        document.getElementById("ppp3").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo3").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp3").innerHTML=" ";
+    }
     chartyd(x);
 };
 var dmhup = function (){
     var x=document.getElementById("abc4").value;
     var sarima_cin_j={{ sarima_dmh|safe }}
-    document.getElementById("demo4").innerHTML="Predicted Deaths in Maharashtra by Day "+String(x);
-    document.getElementById("ppp4").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    var pyl_cin_j={{ pyl_dmh|safe }}
+    var pyu_cin_j={{ pyu_dmh|safe }}
+    if (x<11){
+        document.getElementById("demo4").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x);
+        document.getElementById("ppp4").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo4").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" May Range from";
+        document.getElementById("ppp4").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo4").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp4").innerHTML=" ";
+    }
     chartydm(x);
 };
 var gmaleup = function (){
     var x=document.getElementById("abc5").value;
     var sarima_cin_j={{ sarima_gmale|safe }}
-    document.getElementById("demo5").innerHTML="Predicted value of Males infected by Day "+String(x);
-    document.getElementById("ppp5").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    var pyl_cin_j={{ pyl_gmale|safe }}
+    var pyu_cin_j={{ pyu_gmale|safe }}
+    if (x<11){
+        document.getElementById("demo5").innerHTML="Predicted Males Infected by Day "+String(x);
+        document.getElementById("ppp5").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo5").innerHTML="Predicted Males Infected by Day "+String(x)+" May Range from";
+        document.getElementById("ppp5").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo5").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp5").innerHTML=" ";
+    }
     chartygm(x);
 };
 var gfemaleup = function (){
     var x=document.getElementById("abc6").value;
     var sarima_cin_j={{ sarima_gfemale|safe }}
-    document.getElementById("demo6").innerHTML="Predicted value of Females infected by Day "+String(x);
-    document.getElementById("ppp6").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    var pyl_cin_j={{ pyl_gfemale|safe }}
+    var pyu_cin_j={{ pyu_gfemale|safe }}
+    if (x<11){
+        document.getElementById("demo6").innerHTML="Predicted Females Infected by Day "+String(x);
+        document.getElementById("ppp6").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo6").innerHTML="Predicted Females Infected by Day "+String(x)+" May Range from";
+        document.getElementById("ppp6").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo6").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp6").innerHTML=" ";
+    }
     chartygf(x);
 };
 function charty(x) {
@@ -61,14 +139,14 @@ function charty(x) {
     var d = new Date("2020-4-1");
 
     var arr=[];
-    var enddate=new Date("2020-6-30");
+    var enddate=new Date("2020-7-10");
     var sarima_cin_j={{ sarima_cin|safe }}
     var pyhat_cin_j={{ pyhat_cin|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
         if (d > enddate) {break;}
-        if (i <= 71) { var obj={x: new Date(d), y: sarima_cin_j[i] }; }
-        else { var obj={x: new Date(d), y: pyhat_cin_j[i] , lineColor:"red" };}
+        if (i < 71) { var obj={x: new Date(d), y: Math.ceil(sarima_cin_j[i]) }; }
+        else { var obj={x: new Date(d), y: Math.ceil(pyhat_cin_j[i-71]) };}
         arr.push(obj);
         d.setDate(d.getDate() + 1)
     }
@@ -127,14 +205,14 @@ function chartym(x) {
     var d = new Date("2020-4-1");
 
     var arr=[];
-    var enddate=new Date("2020-6-10");
+    var enddate=new Date("2020-7-10");
     var sarima_cmh_j={{ sarima_cmh|safe }}
     var pyhat_cmh_j={{ pyhat_cmh|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
         if (d > enddate) {break;}
-        if (i <= 71) { var obj={x: new Date(d), y: sarima_cmh_j[i] }; }
-        else { var obj={x: new Date(d), y: pyhat_cmh_j[i] };}
+        if (i < 71) { var obj={x: new Date(d), y: Math.ceil(sarima_cmh_j[i]) }; }
+        else { var obj={x: new Date(d), y: Math.ceil(pyhat_cmh_j[i-71]) };}
         arr.push(obj);
         d.setDate(d.getDate() + 1)
     }
@@ -192,14 +270,14 @@ function chartyd(x) {
     var d = new Date("2020-4-1");
 
     var arr=[];
-    var enddate=new Date("2020-6-10");
+    var enddate=new Date("2020-7-10");
     var sarima_din_j={{ sarima_din|safe }}
     var pyhat_din_j={{ pyhat_din|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
         if (d > enddate) {break;}
-        if (i <= 71) { var obj={x: new Date(d), y: sarima_din_j[i] }; }
-        else { var obj={x: new Date(d), y: pyhat_din_j[i] };}
+        if (i < 71) { var obj={x: new Date(d), y: Math.ceil(sarima_din_j[i]) }; }
+        else { var obj={x: new Date(d), y: Math.ceil(pyhat_din_j[i-71]) };}
         arr.push(obj);
         d.setDate(d.getDate() + 1)
     }
@@ -257,14 +335,14 @@ function chartydm(x) {
     var d = new Date("2020-4-1");
 
     var arr=[];
-    var enddate=new Date("2020-6-10");
+    var enddate=new Date("2020-7-10");
     var sarima_dmh_j={{ sarima_dmh|safe }}
     var pyhat_dmh_j={{ pyhat_dmh|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
         if (d > enddate) {break;}
-        if (i <= 71) { var obj={x: new Date(d), y: sarima_dmh_j[i] }; }
-        else { var obj={x: new Date(d), y: pyhat_dmh_j[i] };}
+        if (i < 71) { var obj={x: new Date(d), y: Math.ceil(sarima_dmh_j[i]) }; }
+        else { var obj={x: new Date(d), y: Math.ceil(pyhat_dmh_j[i-71]) };}
         arr.push(obj);
         d.setDate(d.getDate() + 1)
     }
@@ -322,14 +400,14 @@ function chartygm(x) {
     var d = new Date("2020-4-1");
 
     var arr=[];
-    var enddate=new Date("2020-6-10");
+    var enddate=new Date("2020-7-10");
     var sarima_gmale_j={{ sarima_gmale|safe }}
     var pyhat_gmale_j={{ pyhat_gmale|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
         if (d > enddate) {break;}
-        if (i <= 71) { var obj={x: new Date(d), y: sarima_gmale_j[i] }; }
-        else { var obj={x: new Date(d), y: pyhat_gmale_j[i] };}
+        if (i < 71) { var obj={x: new Date(d), y: Math.ceil(sarima_gmale_j[i]) }; }
+        else { var obj={x: new Date(d), y: Math.ceil(pyhat_gmale_j[i-71]) };}
         arr.push(obj);
         d.setDate(d.getDate() + 1)
     }
@@ -387,14 +465,14 @@ function chartygf(x) {
     var d = new Date("2020-4-1");
 
     var arr=[];
-    var enddate=new Date("2020-6-10");
+    var enddate=new Date("2020-7-10");
     var sarima_gfemale_j={{ sarima_gfemale|safe }}
     var pyhat_gfemale_j={{ pyhat_gfemale|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
         if (d > enddate) {break;}
-        if (i <= 71) { var obj={x: new Date(d), y: sarima_gfemale_j[i] }; }
-        else { var obj={x: new Date(d), y: pyhat_gfemale_j[i] };}
+        if (i < 71) { var obj={x: new Date(d), y: Math.ceil(sarima_gfemale_j[i]) }; }
+        else { var obj={x: new Date(d), y: Math.ceil(pyhat_gfemale_j[i-71]) };}
         arr.push(obj);
         d.setDate(d.getDate() + 1)
     }
@@ -445,17 +523,93 @@ function toggleDataSeries(e){
 	chart.render();
 }
 }
+function on() {
+  document.getElementById("overlay1").style.display = "block";
+  var chart = new CanvasJS.Chart("chartContainer7", {
+	animationEnabled: true,
+	title:{
+		text: "Daily High Temperature at Different Beaches"
+	},
+	axisX: {
+		valueFormatString: "DD MMM,YY"
+	},
+	axisY: {
+		title: "Temperature (in °C)",
+		includeZero: false,
+		suffix: " °C"
+	},
+	legend:{
+		cursor: "pointer",
+		fontSize: 16,
+		itemclick: toggleDataSeries
+	},
+	toolTip:{
+		shared: true
+	},
+	data: [{
+		name: "Myrtle Beach",
+		type: "spline",
+		yValueFormatString: "#0.## °C",
+		showInLegend: true,
+		dataPoints: [
+			{ x: new Date(2017,6,24), y: 31 },
+			{ x: new Date(2017,6,25), y: 31 },
+			{ x: new Date(2017,6,26), y: 29 },
+			{ x: new Date(2017,6,27), y: 29 },
+			{ x: new Date(2017,6,28), y: 31 },
+			{ x: new Date(2017,6,29), y: 30 },
+			{ x: new Date(2017,6,30), y: 29 }
+		]
+	},
+	{
+		name: "Martha Vineyard",
+		type: "spline",
+		yValueFormatString: "#0.## °C",
+		showInLegend: true,
+		dataPoints: [
+			{ x: new Date(2017,6,24), y: 20 },
+			{ x: new Date(2017,6,25), y: 20 },
+			{ x: new Date(2017,6,26), y: 25 },
+			{ x: new Date(2017,6,27), y: 25 },
+			{ x: new Date(2017,6,28), y: 25 },
+			{ x: new Date(2017,6,29), y: 25 },
+			{ x: new Date(2017,6,30), y: 25 }
+		]
+	},
+	{
+		name: "Nantucket",
+		type: "spline",
+		yValueFormatString: "#0.## °C",
+		showInLegend: true,
+		dataPoints: [
+			{ x: new Date(2017,6,24), y: 22 },
+			{ x: new Date(2017,6,25), y: 19 },
+			{ x: new Date(2017,6,26), y: 23 },
+			{ x: new Date(2017,6,27), y: 24 },
+			{ x: new Date(2017,6,28), y: 24 },
+			{ x: new Date(2017,6,29), y: 23 },
+			{ x: new Date(2017,6,30), y: 23 }
+		]
+	}]
+});
+chart.render();
 
-
-function openNav() {
-  document.getElementById("myNav1").style.display = "block";
-
-
+function toggleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
 }
 
-function closeNav() {
-  document.getElementById("myNav1").style.display = "none";
+function off() {
+  document.getElementById("overlay1").style.display = "none";
 }
+
+
 </script>
 <style>
 .button {
@@ -529,53 +683,18 @@ function closeNav() {
   background-color: #94ac23;
   color: black;
 }
-
-
-.overlay {
-  height: 100%;
-  width: 100%;
-  display: none;
+#overlay1 {
   position: fixed;
-  z-index: 1;
+  display: none;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.8);
-}
-
-.overlay-content {
-  position: relative;
-  width: 100%;
-  margin-top: 30px;
-}
-
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
-  }
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -586,14 +705,15 @@ function closeNav() {
     <h2 style="font-weight: bolder;color: #D50300">SYMBIOSIS CENTRE FOR APPLIED ARTIFICIAL INTELLIGENCE </h2>
     <hr>
 </header>
-<div id="myNav1" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-  </div>
+
+<div id="overlay1" onclick="off()">
+    <div id="chartContainer7" style="margin-top:10%;margin-left: 20%;height: 370px; width: 70%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </div>
 
+
 <div class="w3-row"  >
-  <div class="w3-third " style="padding: 20px;">
+  <div class="w3-third " style="padding: 20px;" onclick="on()">
     <div id="chartContainer1" style="height: 370px; width: 100%;"  onclick="openNav()"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center">
