@@ -5,12 +5,12 @@
 <head>
 <script>
 window.onload = function() {
-  charty(0);
-  chartym(0);
-  chartyd(0);
-  chartydm(0);
-  chartygm(0);
-  chartygf(0);
+  charty(0,"chartContainer1");
+  chartym(0,"chartContainer2");
+  chartyd(0,"chartContainer3");
+  chartydm(0,"chartContainer4");
+  chartygm(0,"chartContainer5");
+  chartygf(0,"chartContainer6");
 };
 var cinup = function (){
     var x=document.getElementById("abc").value;
@@ -22,7 +22,7 @@ var cinup = function (){
         document.getElementById("ppp1").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     }
     else if (x<41){
-        document.getElementById("demo").innerHTML="Predicted Cases In India by Day "+String(x)+" May Range from";
+        document.getElementById("demo").innerHTML="Predicted Cases In India by Day "+String(x)+" may Range from";
         document.getElementById("ppp1").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
     }
@@ -30,7 +30,27 @@ var cinup = function (){
         document.getElementById("demo").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp1").innerHTML=" ";
     }
-    charty(x);
+    charty(x,"chartContainer1");
+};
+var cinup1 = function (){
+    var x=document.getElementById("abc7").value;
+    var sarima_cin_j={{ sarima_cin|safe }}
+    var pyl_cin_j={{ pyl_cin|safe }}
+    var pyu_cin_j={{ pyu_cin|safe }}
+    if (x<11){
+        document.getElementById("demo7").innerHTML="Predicted Cases In India by Day "+String(x);
+        document.getElementById("ppp7").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<41){
+        document.getElementById("demo7").innerHTML="Predicted Cases In India by Day "+String(x)+" may Range from";
+        document.getElementById("ppp7").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo7").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp7").innerHTML=" ";
+    }
+    charty(x,"chartContainer7");
 };
 var cmhup = function (){
     var x=document.getElementById("abc2").value;
@@ -42,7 +62,7 @@ var cmhup = function (){
         document.getElementById("ppp2").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     }
     else if (x<40){
-        document.getElementById("demo2").innerHTML="Predicted Cases In Maharashtra by Day "+String(x)+" May Range from";
+        document.getElementById("demo2").innerHTML="Predicted Cases In Maharashtra by Day "+String(x)+" may Range from";
         document.getElementById("ppp2").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
     }
@@ -50,7 +70,27 @@ var cmhup = function (){
         document.getElementById("demo2").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp2").innerHTML=" ";
     }
-    chartym(x);
+    chartym(x,"chartContainer2");
+};
+var cmhup1 = function (){
+    var x=document.getElementById("abc8").value;
+    var sarima_cin_j={{ sarima_cmh|safe }}
+    var pyl_cin_j={{ pyl_cmh|safe }}
+    var pyu_cin_j={{ pyu_cmh|safe }}
+    if (x<11){
+        document.getElementById("demo8").innerHTML="Predicted Cases In Maharashtra by Day "+String(x);
+        document.getElementById("ppp8").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo8").innerHTML="Predicted Cases In Maharashtra by Day "+String(x)+" may Range from";
+        document.getElementById("ppp8").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo8").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp8").innerHTML=" ";
+    }
+    chartym(x,"chartContainer8");
 };
 var dinup = function (){
     var x=document.getElementById("abc3").value;
@@ -62,7 +102,7 @@ var dinup = function (){
         document.getElementById("ppp3").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     }
     else if (x<40){
-        document.getElementById("demo3").innerHTML="Predicted Deaths In India by Day "+String(x)+" May Range from";
+        document.getElementById("demo3").innerHTML="Predicted Deaths In India by Day "+String(x)+" may Range from";
         document.getElementById("ppp3").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
     }
@@ -70,7 +110,27 @@ var dinup = function (){
         document.getElementById("demo3").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp3").innerHTML=" ";
     }
-    chartyd(x);
+    chartyd(x,"chartContainer3");
+};
+var dinup1 = function (){
+    var x=document.getElementById("abc9").value;
+    var sarima_cin_j={{ sarima_din|safe }}
+    var pyl_cin_j={{ pyl_din|safe }}
+    var pyu_cin_j={{ pyu_din|safe }}
+    if (x<11){
+        document.getElementById("demo9").innerHTML="Predicted Deaths In India by Day "+String(x);
+        document.getElementById("ppp9").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo9").innerHTML="Predicted Deaths In India by Day "+String(x)+" may Range from";
+        document.getElementById("ppp9").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo9").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp9").innerHTML=" ";
+    }
+    chartyd(x,"chartContainer9");
 };
 var dmhup = function (){
     var x=document.getElementById("abc4").value;
@@ -82,7 +142,7 @@ var dmhup = function (){
         document.getElementById("ppp4").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     }
     else if (x<40){
-        document.getElementById("demo4").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" May Range from";
+        document.getElementById("demo4").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" may Range from";
         document.getElementById("ppp4").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
     }
@@ -90,7 +150,27 @@ var dmhup = function (){
         document.getElementById("demo4").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp4").innerHTML=" ";
     }
-    chartydm(x);
+    chartydm(x,"chartContainer4");
+};
+var dmhup1 = function (){
+    var x=document.getElementById("abc10").value;
+    var sarima_cin_j={{ sarima_dmh|safe }}
+    var pyl_cin_j={{ pyl_dmh|safe }}
+    var pyu_cin_j={{ pyu_dmh|safe }}
+    if (x<11){
+        document.getElementById("demo10").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x);
+        document.getElementById("ppp10").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo10").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" may Range from";
+        document.getElementById("ppp10").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo10").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp10").innerHTML=" ";
+    }
+    chartydm(x,"chartContainer10");
 };
 var gmaleup = function (){
     var x=document.getElementById("abc5").value;
@@ -102,7 +182,7 @@ var gmaleup = function (){
         document.getElementById("ppp5").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     }
     else if (x<40){
-        document.getElementById("demo5").innerHTML="Predicted Males Infected by Day "+String(x)+" May Range from";
+        document.getElementById("demo5").innerHTML="Predicted Males Infected by Day "+String(x)+" may Range from";
         document.getElementById("ppp5").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
     }
@@ -110,7 +190,27 @@ var gmaleup = function (){
         document.getElementById("demo5").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp5").innerHTML=" ";
     }
-    chartygm(x);
+    chartygm(x,"chartContainer5");
+};
+var gmaleup1 = function (){
+    var x=document.getElementById("abc11").value;
+    var sarima_cin_j={{ sarima_gmale|safe }}
+    var pyl_cin_j={{ pyl_gmale|safe }}
+    var pyu_cin_j={{ pyu_gmale|safe }}
+    if (x<11){
+        document.getElementById("demo11").innerHTML="Predicted Males Infected by Day "+String(x);
+        document.getElementById("ppp11").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo11").innerHTML="Predicted Males Infected by Day "+String(x)+" may Range from";
+        document.getElementById("ppp11").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo11").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp11").innerHTML=" ";
+    }
+    chartygm(x,"chartContainer11");
 };
 var gfemaleup = function (){
     var x=document.getElementById("abc6").value;
@@ -122,7 +222,7 @@ var gfemaleup = function (){
         document.getElementById("ppp6").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
     }
     else if (x<40){
-        document.getElementById("demo6").innerHTML="Predicted Females Infected by Day "+String(x)+" May Range from";
+        document.getElementById("demo6").innerHTML="Predicted Females Infected by Day "+String(x)+" may Range from";
         document.getElementById("ppp6").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
     }
@@ -130,9 +230,29 @@ var gfemaleup = function (){
         document.getElementById("demo6").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp6").innerHTML=" ";
     }
-    chartygf(x);
+    chartygf(x,"chartContainer6");
 };
-function charty(x) {
+var gfemaleup1 = function (){
+    var x=document.getElementById("abc12").value;
+    var sarima_cin_j={{ sarima_gfemale|safe }}
+    var pyl_cin_j={{ pyl_gfemale|safe }}
+    var pyu_cin_j={{ pyu_gfemale|safe }}
+    if (x<11){
+        document.getElementById("demo12").innerHTML="Predicted Females Infected by Day "+String(x);
+        document.getElementById("ppp12").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+    }
+    else if (x<40){
+        document.getElementById("demo12").innerHTML="Predicted Females Infected by Day "+String(x)+" may Range from";
+        document.getElementById("ppp6").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
+            +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+    }
+    else{
+        document.getElementById("demo12").innerHTML="Prediction only possible for 40 days from 31st May 2020";
+        document.getElementById("ppp12").innerHTML=" ";
+    }
+    chartygf(x,"chartContainer12");
+};
+function charty(x,cnt) {
     if (x === undefined) {
     x = 0;
     }
@@ -160,7 +280,7 @@ var momo=[{
         color:"#be83f6",
 		dataPoints: arr
 	}];
-var chart = new CanvasJS.Chart("chartContainer1", {
+var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
     zoomEnabled: true,
@@ -183,7 +303,6 @@ var chart = new CanvasJS.Chart("chartContainer1", {
 	legend:{
 		cursor: "pointer",
 		fontSize: 16,
-		itemclick: toggleDataSeries
 	},
 	toolTip:{
 		shared: true
@@ -191,18 +310,8 @@ var chart = new CanvasJS.Chart("chartContainer1", {
 	data: momo
 });
 chart.render();
-
-function toggleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
 }
-}
-function chartym(x) {
+function chartym(x,cnt) {
     if (x === undefined) {
     x = 0;
     }
@@ -229,7 +338,7 @@ var momo=[{
         color:"#f96ac0",
 		dataPoints: arr
 	}];
-var chart = new CanvasJS.Chart("chartContainer2", {
+var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
     zoomEnabled: true,
@@ -250,7 +359,6 @@ var chart = new CanvasJS.Chart("chartContainer2", {
 	legend:{
 		cursor: "pointer",
 		fontSize: 16,
-		itemclick: toggleDataSeries
 	},
 	toolTip:{
 		shared: true
@@ -259,17 +367,8 @@ var chart = new CanvasJS.Chart("chartContainer2", {
 });
 chart.render();
 
-function toggleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
 }
-}
-function chartyd(x) {
+function chartyd(x,cnt) {
     if (x === undefined) {
     x = 0;
     }
@@ -296,7 +395,7 @@ var momo=[{
         color:"#ff6681",
 		dataPoints: arr
 	}];
-var chart = new CanvasJS.Chart("chartContainer3", {
+var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
     zoomEnabled: true,
@@ -317,7 +416,6 @@ var chart = new CanvasJS.Chart("chartContainer3", {
 	legend:{
 		cursor: "pointer",
 		fontSize: 16,
-		itemclick: toggleDataSeries
 	},
 	toolTip:{
 		shared: true
@@ -325,18 +423,8 @@ var chart = new CanvasJS.Chart("chartContainer3", {
 	data: momo
 });
 chart.render();
-
-function toggleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
 }
-}
-function chartydm(x) {
+function chartydm(x,cnt) {
     if (x === undefined) {
     x = 0;
     }
@@ -363,7 +451,7 @@ var momo=[{
         color:"#f97c48",
 		dataPoints: arr
 	}];
-var chart = new CanvasJS.Chart("chartContainer4", {
+var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
     zoomEnabled: true,
@@ -384,7 +472,6 @@ var chart = new CanvasJS.Chart("chartContainer4", {
 	legend:{
 		cursor: "pointer",
 		fontSize: 16,
-		itemclick: toggleDataSeries
 	},
 	toolTip:{
 		shared: true
@@ -392,18 +479,8 @@ var chart = new CanvasJS.Chart("chartContainer4", {
 	data: momo
 });
 chart.render();
-
-function toggleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
 }
-}
-function chartygm(x) {
+function chartygm(x,cnt) {
     if (x === undefined) {
     x = 0;
     }
@@ -430,7 +507,7 @@ var momo=[{
         color:'#cf971b',
 		dataPoints: arr
 	}];
-var chart = new CanvasJS.Chart("chartContainer5", {
+var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
     zoomEnabled: true,
@@ -451,7 +528,6 @@ var chart = new CanvasJS.Chart("chartContainer5", {
 	legend:{
 		cursor: "pointer",
 		fontSize: 16,
-		itemclick: toggleDataSeries
 	},
 	toolTip:{
 		shared: true
@@ -460,17 +536,8 @@ var chart = new CanvasJS.Chart("chartContainer5", {
 });
 chart.render();
 
-function toggleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
 }
-}
-function chartygf(x) {
+function chartygf(x,cnt) {
     if (x === undefined) {
     x = 0;
     }
@@ -497,7 +564,7 @@ var momo=[{
         color:'#94ac23',
 		dataPoints: arr
 	}];
-var chart = new CanvasJS.Chart("chartContainer6", {
+var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
     zoomEnabled: true,
@@ -518,7 +585,6 @@ var chart = new CanvasJS.Chart("chartContainer6", {
 	legend:{
 		cursor: "pointer",
 		fontSize: 16,
-		itemclick: toggleDataSeries
 	},
 	toolTip:{
 		shared: true
@@ -527,83 +593,49 @@ var chart = new CanvasJS.Chart("chartContainer6", {
 });
 chart.render();
 
-function toggleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
-}
 }
 function on() {
   document.getElementById("overlay1").style.display = "block";
-    var x = 99;
-    var d = new Date("2020-4-1");
-    var arr=[];
-    var enddate=new Date("2020-7-10");
-    var sarima_cin_j={{ sarima_cin|safe }}
-    var pyhat_cin_j={{ pyhat_cin|safe }}
-    for(var i=0;i<61+parseInt(x); i++)
-    {
-        if (d > enddate) {break;}
-        if (i < 71) { var obj={x: new Date(d), y: Math.ceil(sarima_cin_j[i]) }; }
-        else { var obj={x: new Date(d), y: Math.ceil(pyhat_cin_j[i-71]) };}
-        arr.push(obj);
-        d.setDate(d.getDate() + 1)
-    }
-var momo=[{
-		name: "Date",
-		type: "area",
-		yValueFormatString: "#0.## cases",
-		showInLegend: true,
-        color:"#be83f6",
-		dataPoints: arr
-	}];
-  var chart = new CanvasJS.Chart("chartContainer7", {
-
-	animationEnabled: true,
-    zoomEnabled: true,
-    theme:"light2",
-	title:{
-		text: "Total Cases of Covid-19 In India",
-        fontColor:'black'
-	},
-	axisX: {
-		valueFormatString: "DD MMM,YY",
-        labelFontColor: "black",
-	},
-	axisY: {
-		title: "Cases",
-		includeZero: false,
-		labelFontColor: "black",
-	},
-	legend:{
-		cursor: "pointer",
-		fontSize: 16,
-		itemclick: toggleDataSeries
-	},
-	toolTip:{
-		shared: true
-	},
-	data: momo
-});
-chart.render();
-
-function toggleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
+    charty(0,"chartContainer7");
 }
+function on2() {
+  document.getElementById("overlay2").style.display = "block";
+    chartym(0,"chartContainer8");
+}
+function on3() {
+  document.getElementById("overlay3").style.display = "block";
+    chartyd(0,"chartContainer9");
+}
+function on4() {
+  document.getElementById("overlay4").style.display = "block";
+    chartydm(0,"chartContainer10");
+}
+function on5() {
+  document.getElementById("overlay5").style.display = "block";
+    chartygm(0,"chartContainer11");
+}
+function on6() {
+  document.getElementById("overlay6").style.display = "block";
+    chartygf(0,"chartContainer12");
 }
 
 function off() {
   document.getElementById("overlay1").style.display = "none";
+}
+function off2() {
+  document.getElementById("overlay2").style.display = "none";
+}
+function off3() {
+  document.getElementById("overlay3").style.display = "none";
+}
+function off4() {
+  document.getElementById("overlay4").style.display = "none";
+}
+function off5() {
+  document.getElementById("overlay5").style.display = "none";
+}
+function off6() {
+  document.getElementById("overlay6").style.display = "none";
 }
 
 
@@ -689,20 +721,85 @@ function off() {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255,255,255,0.85);
+  background-color: rgba(255, 255, 255, 0.92);
+  z-index: 2;
+  cursor: pointer;
+}
+#overlay2 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  z-index: 2;
+  cursor: pointer;
+}
+#overlay3 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  z-index: 2;
+  cursor: pointer;
+}
+#overlay4 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  z-index: 2;
+  cursor: pointer;
+}
+#overlay5 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  z-index: 2;
+  cursor: pointer;
+}
+#overlay6 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.92);
   z-index: 2;
   cursor: pointer;
 }
 .closebtn {
   position: absolute;
-  top: 20px;
+  top: 80%;
   right: 45px;
   font-size: 45px;
 }
-@media screen and (max-height: 450px) {
+@media screen and (max-device-width: 750px) {
   .closebtn {
-  font-size: 25px;
-  top: 15px;
+  font-size: 20px;
+  top: 90%;
   right: 35px;
   }
 }
@@ -722,12 +819,72 @@ function off() {
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center;padding-top: 5%">
         <p id="demo7"></p><h3 id="ppp7" style="color: #BE83F6"></h3>
-        <input type="number" placeholder="Predict for n-th day" id="abc" style="margin: 8px 0;box-sizing: border-box;
+        <input type="number" placeholder="Predict for n-th day" id="abc7" style="margin: 8px 0;box-sizing: border-box;
         border: 2px solid #BE83F6;border-radius: 4px;">
         <button class="button button1" onclick="cinup1()"> Predict </button>
     </div>
-    
 </div>
+
+<div id="overlay2" >
+    <a href="javascript:void(0)"  class="closebtn" onclick="off2()">&times;</a>
+    <div id="chartContainer8" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="text-align: center;padding-top: 5%">
+        <p id="demo8"></p><h3 id="ppp8" style="color: #f96ac0"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc8" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #f96ac0;border-radius: 4px;">
+        <button class="button button2" onclick="cmhup1()"> Predict </button>
+    </div>
+</div>
+
+<div id="overlay3" >
+    <a href="javascript:void(0)"  class="closebtn" onclick="off3()">&times;</a>
+    <div id="chartContainer9" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="text-align: center;padding-top: 5%">
+        <p id="demo9"></p><h3 id="ppp9" style="color: #ff6681"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc9" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #ff6681;border-radius: 4px;">
+        <button class="button button3" onclick="dinup1()"> Predict </button>
+    </div>
+</div>
+
+<div id="overlay4" >
+    <a href="javascript:void(0)"  class="closebtn" onclick="off4()">&times;</a>
+    <div id="chartContainer10" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="text-align: center;padding-top: 5%">
+        <p id="demo10"></p><h3 id="ppp10" style="color: #f97c48"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc10" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #f97c48;border-radius: 4px;">
+        <button class="button button4" onclick="dmhup1()"> Predict </button>
+    </div>
+</div>
+
+<div id="overlay5" >
+    <a href="javascript:void(0)"  class="closebtn" onclick="off5()">&times;</a>
+    <div id="chartContainer11" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="text-align: center;padding-top: 5%">
+        <p id="demo11"></p><h3 id="ppp11" style="color: #cf971b"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc11" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #cf971b;border-radius: 4px;">
+        <button class="button button5" onclick="gmaleup1()"> Predict </button>
+    </div>
+</div>
+
+<div id="overlay6" >
+    <a href="javascript:void(0)"  class="closebtn" onclick="off6()">&times;</a>
+    <div id="chartContainer12" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="text-align: center;padding-top: 5%">
+        <p id="demo12"></p><h3 id="ppp12" style="color: #94ac23"></h3>
+        <input type="number" placeholder="Predict for n-th day" id="abc12" style="margin: 8px 0;box-sizing: border-box;
+        border: 2px solid #94ac23;border-radius: 4px;">
+        <button class="button button6" onclick="gfemaleup1()"> Predict </button>
+    </div>
+</div>
+
 
 
 <div class="w3-row"  >
@@ -742,7 +899,7 @@ function off() {
     </div>
   </div>
     <div class="w3-third" id="cert" style="padding: 20px">
-    <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+    <div id="chartContainer2" style="height: 370px; width: 100%;" onclick="on2()"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center">
         <p id="demo2"></p><h3 id="ppp2" style="color: #f96ac0"></h3>
@@ -752,7 +909,7 @@ function off() {
     </div>
   </div>
     <div class="w3-third" id="cert" style="padding: 20px">
-    <div id="chartContainer3" style="height: 370px; width: 100%;"></div>
+    <div id="chartContainer3" style="height: 370px; width: 100%;" onclick="on3()"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center">
         <p id="demo3"></p><h3 id="ppp3" style="color: #ff6681"></h3>
@@ -765,7 +922,7 @@ function off() {
 <p style="margin-top:  100px"></p>
 <div class="w3-row" >
   <div class="w3-third" style="padding: 20px">
-    <div id="chartContainer4" style="height: 370px; width: 100%;"></div>
+    <div id="chartContainer4" style="height: 370px; width: 100%;" onclick="on4()"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center">
         <p id="demo4"></p><h3 id="ppp4" style="color: #f97c48"></h3>
@@ -775,7 +932,7 @@ function off() {
     </div>
   </div>
     <div class="w3-third" style="padding: 20px">
-    <div id="chartContainer5" style="height: 370px; width: 100%;"></div>
+    <div id="chartContainer5" style="height: 370px; width: 100%;" onclick="on5()"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <div style="text-align: center">
         <p id="demo5"></p><h3 id="ppp5" style="color: #cf971b"></h3>
@@ -785,7 +942,7 @@ function off() {
     </div>
   </div>
     <div class="w3-third" style="padding: 20px">
-    <div id="chartContainer6" style="height: 370px; width: 100%;"></div>
+    <div id="chartContainer6" style="height: 370px; width: 100%;"  onclick="on6()"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center">
         <p id="demo6"></p><h3 id="ppp6" style="color: #94ac23"></h3>
