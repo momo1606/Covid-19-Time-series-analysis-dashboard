@@ -14,3 +14,16 @@ def fetchpred(typ):
     pyl=pyl+df.pyl.to_list()
     pyu=pyu+df.pyu.to_list()
     return [sarima,pyhat,pyl,pyu]
+
+
+def fetchpredcom(typ):
+    df = pd.read_csv(str(typ)+"_pred.csv")
+    sarima=[]
+    pyhat=[]
+    pyl=[]
+    pyu =[]
+    sarima=sarima+df.sarima.tolist()
+    pyhat=pyhat+df.pyhat.to_list()
+    pyl=pyl+df.pyl.to_list()
+    pyu=pyu+df.pyu.to_list()
+    return [sarima,pyhat,pyl,pyu]

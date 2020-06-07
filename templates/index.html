@@ -117,6 +117,7 @@ var dinup1 = function (){
     var sarima_cin_j={{ sarima_din|safe }}
     var pyl_cin_j={{ pyl_din|safe }}
     var pyu_cin_j={{ pyu_din|safe }}
+
     if (x<11){
         document.getElementById("demo9").innerHTML="Predicted Deaths In India by Day "+String(x);
         document.getElementById("ppp9").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
@@ -137,9 +138,19 @@ var dmhup = function (){
     var sarima_cin_j={{ sarima_dmh|safe }}
     var pyl_cin_j={{ pyl_dmh|safe }}
     var pyu_cin_j={{ pyu_dmh|safe }}
+    var sarima_com_ab={{ sarima_com_ab|safe }}
+    var sarima_com_pr={{ sarima_com_pr|safe }}
+    var pyl_com_ab={{ pyl_com_ab|safe }}
+    var pyu_com_ab={{ pyu_com_ab|safe }}
+    var pyl_com_pr={{ pyl_com_pr|safe }}
+    var pyu_com_pr={{ pyu_com_pr|safe }}
     if (x<11){
         document.getElementById("demo4").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x);
         document.getElementById("ppp4").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+        document.getElementById("demom4").innerHTML="Where Comorbidity may be absent for "+
+            String(Math.ceil((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_ab[parseInt(x)-1])/100))+
+            " And present for "+
+            String(Math.floor((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_pr[parseInt(x)-1])/100));
     }
     else if (x<40){
         document.getElementById("demo4").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" may Range from";
@@ -157,9 +168,19 @@ var dmhup1 = function (){
     var sarima_cin_j={{ sarima_dmh|safe }}
     var pyl_cin_j={{ pyl_dmh|safe }}
     var pyu_cin_j={{ pyu_dmh|safe }}
+    var sarima_com_ab={{ sarima_com_ab|safe }}
+    var sarima_com_pr={{ sarima_com_pr|safe }}
+    var pyl_com_ab={{ pyl_com_ab|safe }}
+    var pyu_com_ab={{ pyu_com_ab|safe }}
+    var pyl_com_pr={{ pyl_com_pr|safe }}
+    var pyu_com_pr={{ pyu_com_pr|safe }}
     if (x<11){
         document.getElementById("demo10").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x);
         document.getElementById("ppp10").innerHTML=String(Math.ceil(sarima_cin_j[61+parseInt(x)-1]));
+        document.getElementById("demom10").innerHTML="Where Comorbidity may be absent for "+
+            String(Math.ceil((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_ab[parseInt(x)-1])/100))+
+            " And present for "+
+            String(Math.floor((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_pr[parseInt(x)-1])/100));
     }
     else if (x<40){
         document.getElementById("demo10").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" may Range from";
@@ -723,7 +744,7 @@ function off6() {
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.92);
   z-index: 2;
-  cursor: pointer;
+
 }
 #overlay2 {
   position: fixed;
@@ -854,7 +875,8 @@ function off6() {
     <div id="chartContainer10" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center;padding-top: 5%">
-        <p id="demo10"></p><h3 id="ppp10" style="color: #f97c48"></h3>
+        <p id="demo10"></p><h3 id="ppp10" style="color: #f97c48"></h3><p id="demom10"></p>
+
         <input type="number" placeholder="Predict for n-th day" id="abc10" style="margin: 8px 0;box-sizing: border-box;
         border: 2px solid #f97c48;border-radius: 4px;">
         <button class="button button4" onclick="dmhup1()"> Predict </button>
@@ -925,7 +947,7 @@ function off6() {
     <div id="chartContainer4" style="height: 370px; width: 100%;" onclick="on4()"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center">
-        <p id="demo4"></p><h3 id="ppp4" style="color: #f97c48"></h3>
+        <p id="demo4"></p><h3 id="ppp4" style="color: #f97c48"></h3><p id="demom4"></p>
         <input type="number" placeholder="Predict for n-th day" id="abc4" style="margin: 8px 0;box-sizing: border-box;
         border: 2px solid #f97c48;border-radius: 4px;">
         <button class="button button4" onclick="dmhup()"> Predict </button>
