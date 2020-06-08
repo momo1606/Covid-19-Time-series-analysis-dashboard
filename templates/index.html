@@ -156,6 +156,12 @@ var dmhup = function (){
         document.getElementById("demo4").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" may Range from";
         document.getElementById("ppp4").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+        document.getElementById("demom4").innerHTML="Where Comorbidity may be absent for ("
+            +String(Math.ceil((pyl_cin_j[parseInt(x)-11])*pyl_com_ab[parseInt(x)-11]/100))+" , "
+            +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*pyu_com_ab[parseInt(x)-11]/100)) +") and present for ("+
+            String(Math.ceil((pyl_cin_j[parseInt(x)-11])*pyl_com_pr[parseInt(x)-11]/100))+" , "
+            +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*pyu_com_pr[parseInt(x)-11]/100))+" )";
+
     }
     else{
         document.getElementById("demo4").innerHTML="Prediction only possible for 40 days from 31st May 2020";
@@ -186,6 +192,11 @@ var dmhup1 = function (){
         document.getElementById("demo10").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" may Range from";
         document.getElementById("ppp10").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+        document.getElementById("demom10").innerHTML="Where Comorbidity may be absent for ("
+            +String(Math.ceil((pyl_cin_j[parseInt(x)-11])*pyl_com_ab[parseInt(x)-11]/100))+" , "
+            +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*pyu_com_ab[parseInt(x)-11]/100)) +") and present for ("+
+            String(Math.ceil((pyl_cin_j[parseInt(x)-11])*pyl_com_pr[parseInt(x)-11]/100))+" , "
+            +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*pyu_com_pr[parseInt(x)-11]/100))+" )";
     }
     else{
         document.getElementById("demo10").innerHTML="Prediction only possible for 40 days from 31st May 2020";
