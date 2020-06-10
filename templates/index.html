@@ -12,6 +12,7 @@ window.onload = function() {
   chartygm(0,"chartContainer5");
   chartygf(0,"chartContainer6");
 };
+
 var cinup = function (){
     var x=document.getElementById("abc").value;
     var sarima_cin_j={{ sarima_cin|safe }}
@@ -318,7 +319,7 @@ var chart = new CanvasJS.Chart(cnt, {
     zoomEnabled: true,
     theme:"light2",
 	title:{
-		text: "Total Cases of Covid-19 In India",
+		text: "Total Cases of COVID-19 In India",
         fontColor: "black"
 	},
 	axisX: {
@@ -433,7 +434,7 @@ var chart = new CanvasJS.Chart(cnt, {
     zoomEnabled: true,
     theme:"light2",
 	title:{
-		text: "Deaths in India due to COVID",
+		text: "Deaths in India due to COVID-19",
         fontColor:"black"
 	},
 	axisX: {
@@ -545,7 +546,7 @@ var chart = new CanvasJS.Chart(cnt, {
     zoomEnabled: true,
     theme:"light2",
 	title:{
-		text: "Males Infected with Covid-19",
+		text: "Males Infected with COVID-19",
         fontColor:"black",
 	},
 	axisX: {
@@ -602,7 +603,7 @@ var chart = new CanvasJS.Chart(cnt, {
     zoomEnabled: true,
     theme:"light2",
 	title:{
-		text: "Females Infected with Covid-19",
+		text: "Females Infected with COVID-19",
         fontColor:"black"
 	},
 	axisX: {
@@ -629,46 +630,46 @@ chart.render();
 function on() {
   document.getElementById("overlay1").style.display = "block";
     charty(0,"chartContainer7");
-}
+};
 function on2() {
   document.getElementById("overlay2").style.display = "block";
     chartym(0,"chartContainer8");
-}
+};
 function on3() {
   document.getElementById("overlay3").style.display = "block";
     chartyd(0,"chartContainer9");
-}
+};
 function on4() {
   document.getElementById("overlay4").style.display = "block";
     chartydm(0,"chartContainer10");
-}
+};
 function on5() {
   document.getElementById("overlay5").style.display = "block";
     chartygm(0,"chartContainer11");
-}
+};
 function on6() {
   document.getElementById("overlay6").style.display = "block";
     chartygf(0,"chartContainer12");
-}
+};
 
 function off() {
   document.getElementById("overlay1").style.display = "none";
-}
+};
 function off2() {
   document.getElementById("overlay2").style.display = "none";
-}
+};
 function off3() {
   document.getElementById("overlay3").style.display = "none";
-}
+};
 function off4() {
   document.getElementById("overlay4").style.display = "none";
-}
+};
 function off5() {
   document.getElementById("overlay5").style.display = "none";
-}
+};
 function off6() {
   document.getElementById("overlay6").style.display = "none";
-}
+};
 
 
 </script>
@@ -838,16 +839,18 @@ function off6() {
 </style>
 </head>
 <body>
-<header style="text-align: center;margin-bottom: 3.5%; background: white" >
+<header style="text-align: center;position: relative;background: white" >
     <img class="w3-hide-small" src="https://www.siu.edu.in/images/discipline-logo.jpg" style="float:left;padding-left: 5%;padding-top: 0.3%">
-    <h2 style="font-weight: bolder;color: #d50300 ; margin-bottom: 1vw; font-size: 1.4vw">SYMBIOSIS INTERNATIONAL (DEEMED UNIVERSITY) </h2>
+    <img class="w3-hide-small" src="{{url_for('static', filename='scaai_logo.png')}}" style="float:right;padding-right: 5%;padding-top: 0.3%">
+    <h2 style="z-index: 2;font-weight: bolder;color: #d50300 ; margin-bottom: 1vw; font-size: 1.4vw">SYMBIOSIS INTERNATIONAL (DEEMED UNIVERSITY) </h2>
     <h2 style="font-weight: bolder;color: #D50300; font-size: 1.4vw">SYMBIOSIS CENTRE FOR APPLIED ARTIFICIAL INTELLIGENCE </h2>
+
     <hr>
 </header>
 
 <div id="overlay1" >
     <a href="javascript:void(0)"  class="closebtn" onclick="off()">&times;</a>
-    <div id="chartContainer7" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <div id="chartContainer7" style="padding-left: 5%;padding-top: 5%;height: 60%; width: 90%; " ></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center;padding-top: 5%">
         <p id="demo7"></p><h3 id="ppp7" style="color: #BE83F6"></h3>
@@ -859,7 +862,7 @@ function off6() {
 
 <div id="overlay2" >
     <a href="javascript:void(0)"  class="closebtn" onclick="off2()">&times;</a>
-    <div id="chartContainer8" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <div id="chartContainer8" style="padding-left: 5%;padding-top: 5%;height: 60%; width: 90%; " ></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center;padding-top: 5%">
         <p id="demo8"></p><h3 id="ppp8" style="color: #f96ac0"></h3>
@@ -871,7 +874,7 @@ function off6() {
 
 <div id="overlay3" >
     <a href="javascript:void(0)"  class="closebtn" onclick="off3()">&times;</a>
-    <div id="chartContainer9" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <div id="chartContainer9" style="padding-left: 5%;padding-top: 5%;height: 60%; width: 90%; " ></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center;padding-top: 5%">
         <p id="demo9"></p><h3 id="ppp9" style="color: #ff6681"></h3>
@@ -883,7 +886,7 @@ function off6() {
 
 <div id="overlay4" >
     <a href="javascript:void(0)"  class="closebtn" onclick="off4()">&times;</a>
-    <div id="chartContainer10" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <div id="chartContainer10" style="padding-left: 5%;padding-top: 5%;height: 60%; width: 90%; " ></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center;padding-top: 5%">
         <p id="demo10"></p><h3 id="ppp10" style="color: #f97c48"></h3><p id="demom10"></p>
@@ -896,7 +899,7 @@ function off6() {
 
 <div id="overlay5" >
     <a href="javascript:void(0)"  class="closebtn" onclick="off5()">&times;</a>
-    <div id="chartContainer11" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <div id="chartContainer11" style="padding-left: 5%;padding-top: 5%;height: 60%; width: 90%; " ></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center;padding-top: 5%">
         <p id="demo11"></p><h3 id="ppp11" style="color: #cf971b"></h3>
@@ -908,7 +911,7 @@ function off6() {
 
 <div id="overlay6" >
     <a href="javascript:void(0)"  class="closebtn" onclick="off6()">&times;</a>
-    <div id="chartContainer12" style="padding-left: 5%;padding-top: 5%;height: 400px; width: 90%; " ></div>
+    <div id="chartContainer12" style="padding-left: 5%;padding-top: 5%;height: 60%; width: 90%; " ></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div style="text-align: center;padding-top: 5%">
         <p id="demo12"></p><h3 id="ppp12" style="color: #94ac23"></h3>
@@ -918,7 +921,9 @@ function off6() {
     </div>
 </div>
 
-
+<div style="text-align: center;">
+    <h1><b>Predictive Analysis of COVID-19 in Maharashtra</b></h1>
+</div>
 
 <div class="w3-row"  >
   <div class="w3-third " style="padding: 20px;" >
