@@ -7,7 +7,6 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     sarima_cin, pyhat_cin, pyl_cin, pyu_cin= csvdata.fetchpred('cin')
-    print(pyhat_cin)
     sarima_cmh, pyhat_cmh, pyl_cmh, pyu_cmh = csvdata.fetchpred('cmh')
     sarima_din, pyhat_din, pyl_din, pyu_din = csvdata.fetchpred('din')
     sarima_dmh, pyhat_dmh, pyl_dmh, pyu_dmh = csvdata.fetchpred('dmh')
@@ -15,12 +14,12 @@ def home():
     sarima_gfemale, pyhat_gfemale, pyl_gfemale, pyu_gfemale = csvdata.fetchpred('gfemale')
     sarima_com_ab, pyhat_com_ab, pyl_com_ab, pyu_com_ab = csvdata.fetchpredcom('com_ab')
     sarima_com_pr, pyhat_com_pr, pyl_com_pr, pyu_com_pr = csvdata.fetchpredcom('com_pr')
-    actual_cin=[189325,197496,206405,215709,225560,235447,245418,255401,265388]
-    actual_cmh=[66012,68373,70660,73220,76153,78579,81318,84325,86878]
-    actual_din=[5229,5305,5408,5530,5653,5792,5912,6003,6112]
-    actual_dmh=[2276,2352,2455,2577,2700,2839,2959,3050,3159]
-    actual_gmale=[40682,42211,43679,45084,46652,48444,49943,51590,53443]
-    actual_gfemale=[24448,25430,26294,27176,28168,29309,30246,31338,32492]
+    actual_cin=[189325, 197496, 206405, 215709, 225560, 235447, 245418, 255401,265388, 275373, 285369, 296325, 307783, 319712, 331214]
+    actual_cmh=[ 66012,  68373,  70660,  73220,  76153,  78579,  81318,  84325,86878,  89137,  92391,  95998,  99491, 102918, 106308]
+    actual_din=[5370, 5574, 5791, 6051, 6324, 6618, 6905, 7111, 7442, 7721, 8078,8474, 8860, 9171, 9496]
+    actual_dmh=[2276, 2352, 2455, 2577, 2700, 2839, 2959, 3050, 3159, 3279, 3428,3580, 3707, 3820, 3940]
+    actual_gmale=[40682, 42211, 43679, 45084, 46652, 48444, 49943, 51590, 53443,54979, 56378, 58397, 60600, 62682, 64756]
+    actual_gfemale=[24448, 25430, 26294, 27176, 28168, 29309, 30246, 31338, 32492,33509, 35387, 36621, 38025, 39436, 40789]
     return render_template('index.html',sarima_cin=json.dumps(sarima_cin),pyhat_cin=json.dumps(pyhat_cin),
                            pyl_cin=json.dumps(pyl_cin), pyu_cin=json.dumps(pyu_cin),sarima_cmh=json.dumps(sarima_cmh),
                            pyhat_cmh=json.dumps(pyhat_cmh),pyl_cmh=json.dumps(pyl_cmh), pyu_cmh=json.dumps(pyu_cmh),

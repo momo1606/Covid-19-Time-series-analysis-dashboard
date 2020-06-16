@@ -526,7 +526,7 @@ function charty(x,cnt) {
     var pyhat_cin_j={{ pyhat_cin|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
-        if(i>60 && i<70)
+        if(i>60 && i<76)
             {
                     var obj2={x: new Date(d), y: act_din[i-61] };
                     arr2.push(obj2);
@@ -599,7 +599,7 @@ function chartym(x,cnt) {
     var pyhat_cmh_j={{ pyhat_cmh|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
-        if(i>60 && i<70)
+        if(i>60 && i<76)
             {
                     var obj2={x: new Date(d), y: act_din[i-61] };
                     arr2.push(obj2);
@@ -671,12 +671,12 @@ function chartyd(x,cnt) {
     for(var i=0;i<61+parseInt(x); i++)
     {
         if (d > enddate) {break;}
-        if (i < 71) {
-            if(i>60 && i<70)
+        if(i>60 && i<76)
             {
                     var obj2={x: new Date(d), y: act_din[i-61] };
                     arr2.push(obj2);
             }
+        if (i < 71) {
             var obj={x: new Date(d), y: Math.ceil(sarima_din_j[i]) };
         }
         else { var obj={x: new Date(d), y: Math.ceil(pyhat_din_j[i-71]) };}
@@ -742,7 +742,7 @@ function chartydm(x,cnt) {
     var pyhat_dmh_j={{ pyhat_dmh|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
-           if(i>60 && i<70)
+           if(i>60 && i<76)
             {
                     var obj2={x: new Date(d), y: act_din[i-61] };
                     arr2.push(obj2);
@@ -812,7 +812,7 @@ function chartygm(x,cnt) {
     var pyhat_gmale_j={{ pyhat_gmale|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
-        if(i>60 && i<70)
+        if(i>60 && i<76)
             {
                     var obj2={x: new Date(d), y: act_gmale[i-61] };
                     arr2.push(obj2);
@@ -884,7 +884,7 @@ function chartygf(x,cnt) {
     var pyhat_gfemale_j={{ pyhat_gfemale|safe }}
     for(var i=0;i<61+parseInt(x); i++)
     {
-        if(i>60 && i<70)
+        if(i>60 && i<76)
             {
                     var obj2={x: new Date(d), y: act_gfemale[i-61] };
                     arr2.push(obj2);
