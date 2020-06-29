@@ -20,10 +20,10 @@ var cinup = function (){
     var pyl_cin_j={{ pyl_cin|safe }}
     var pyu_cin_j={{ pyu_cin|safe }}
     var act={{ actual_cin }}
-    if(x<8)
+    if(x<10)
         {
             document.getElementById("show1").style.display='none';
-            var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+            var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
             var b=act[x-1];
             var pe=(100*Math.abs(a-b)/b).toFixed(2);
             document.getElementById("t12").innerHTML=String(a);
@@ -31,7 +31,7 @@ var cinup = function (){
             document.getElementById("t13").innerHTML=String(pe);
             document.getElementById("t1").style.display='block';
         }
-    else if (x<11){
+     if (x<11){
         document.getElementById("t1").style.display='none';
         document.getElementById("demo").innerHTML="Predicted Cases In India by Day "+String(x);
         document.getElementById("ppp1").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
@@ -47,7 +47,7 @@ var cinup = function (){
     }
     else{
         document.getElementById("t1").style.display='none';
-        document.getElementById("demo").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp1").innerHTML=" ";
         document.getElementById("show1").style.display='block';
     }
@@ -59,10 +59,10 @@ var cinup1 = function (){
     var pyl_cin_j={{ pyl_cin|safe }}
     var pyu_cin_j={{ pyu_cin|safe }}
     var act={{ actual_cin }}
-    if(x<8)
+    if(x<10)
         {
             document.getElementById('show7').style.display='none';
-            var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+            var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
             var b=act[x-1];
             var pe=(100*Math.abs(a-b)/b).toFixed(2);
             document.getElementById("t72").innerHTML=String(a);
@@ -70,7 +70,7 @@ var cinup1 = function (){
             document.getElementById("t73").innerHTML=String(pe);
             document.getElementById("t7").style.display='block';
         }
-    else if (x<11){
+    if (x<11){
         document.getElementById("t7").style.display='none';
         document.getElementById("demo7").innerHTML="Predicted Cases In India by Day "+String(x);
         document.getElementById("ppp7").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
@@ -85,7 +85,7 @@ var cinup1 = function (){
     }
     else{
         document.getElementById("t7").style.display='none';
-        document.getElementById("demo7").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo7").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp7").innerHTML=" ";
         document.getElementById("show7").style.display='block';
     }
@@ -97,9 +97,9 @@ var cmhup = function (){
     var pyl_cin_j={{ pyl_cmh|safe }}
     var pyu_cin_j={{ pyu_cmh|safe }}
     var act={{ actual_cmh }}
-    if(x<8)
+    if(x<10)
     {   document.getElementById('show2').style.display='none';
-        var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+        var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
         var b=act[x-1];
         var pe=(100*Math.abs(a-b)/b).toFixed(2);
         document.getElementById("t22").innerHTML=String(a);
@@ -107,7 +107,7 @@ var cmhup = function (){
         document.getElementById("t23").innerHTML=String(pe);
         document.getElementById("t2").style.display='block';
      }
-    else if (x<11){
+    if (x<11){
         document.getElementById("t2").style.display='none';
         document.getElementById("demo2").innerHTML="Predicted Cases In India by Day "+String(x);
         document.getElementById("ppp2").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
@@ -122,7 +122,7 @@ var cmhup = function (){
     }
     else{
         document.getElementById("t2").style.display='none';
-        document.getElementById("demo2").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo2").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp2").innerHTML=" ";
         document.getElementById("show2").style.display='block';
     }
@@ -134,9 +134,9 @@ var cmhup1 = function (){
     var pyl_cin_j={{ pyl_cmh|safe }}
     var pyu_cin_j={{ pyu_cmh|safe }}
     var act={{ actual_cmh }}
-    if(x<8)
+    if(x<10)
     {   document.getElementById('show8').style.display='none';
-        var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+        var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
         var b=act[x-1];
         var pe=(100*Math.abs(a-b)/b).toFixed(2);
         document.getElementById("t82").innerHTML=String(a);
@@ -145,7 +145,7 @@ var cmhup1 = function (){
         document.getElementById("t8").style.display='block';
 
      }
-    else if (x<11){
+    if (x<11){
         document.getElementById("t8").style.display='none';
         document.getElementById("demo8").innerHTML="Predicted Cases In India by Day "+String(x);
         document.getElementById("ppp8").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
@@ -160,7 +160,7 @@ var cmhup1 = function (){
     }
     else{
         document.getElementById("t8").style.display='none';
-        document.getElementById("demo8").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo8").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp8").innerHTML=" ";
         document.getElementById("show8").style.display='block';
     }
@@ -172,9 +172,9 @@ var dinup = function (){
     var pyl_cin_j={{ pyl_din|safe }}
     var pyu_cin_j={{ pyu_din|safe }}
     var act={{ actual_din }}
-    if(x<8)
+    if(x<10)
     {   document.getElementById('show3').style.display='none';
-        var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+        var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
         var b=act[x-1];
         var pe=(100*Math.abs(a-b)/b).toFixed(2);
         document.getElementById("t32").innerHTML=String(a);
@@ -183,7 +183,7 @@ var dinup = function (){
         document.getElementById("t3").style.display='block';
 
      }
-    else if (x<11){
+    if (x<11){
         document.getElementById("t3").style.display='none';
         document.getElementById("demo3").innerHTML="Predicted Cases In India by Day "+String(x);
         document.getElementById("ppp3").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
@@ -198,7 +198,7 @@ var dinup = function (){
     }
     else{
         document.getElementById("t3").style.display='none';
-        document.getElementById("demo3").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo3").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp3").innerHTML=" ";
         document.getElementById("show3").style.display='block';
     }
@@ -210,9 +210,9 @@ var dinup1 = function (){
     var pyl_cin_j={{ pyl_din|safe }}
     var pyu_cin_j={{ pyu_din|safe }}
     var act={{ actual_din }}
-    if(x<8)
+    if(x<10)
     {   document.getElementById('show9').style.display='none';
-        var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+        var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
         var b=act[x-1];
         var pe=(100*Math.abs(a-b)/b).toFixed(2);
         document.getElementById("t92").innerHTML=String(a);
@@ -221,7 +221,7 @@ var dinup1 = function (){
         document.getElementById("t9").style.display='block';
 
      }
-    else if (x<11){
+    if (x<11){
         document.getElementById("t9").style.display='none';
         document.getElementById("demo9").innerHTML="Predicted Cases In India by Day "+String(x);
         document.getElementById("ppp9").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
@@ -236,7 +236,7 @@ var dinup1 = function (){
     }
     else{
         document.getElementById("t2").style.display='none';
-        document.getElementById("demo2").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo2").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp2").innerHTML=" ";
         document.getElementById("show2").style.display='block';
     }
@@ -247,11 +247,17 @@ var dmhup = function (){
     var sarima_cin_j={{ sarima_dmh|safe }}
     var pyl_cin_j={{ pyl_dmh|safe }}
     var pyu_cin_j={{ pyu_dmh|safe }}
+    {#var sarima_com_ab={{ sarima_com_ab|safe }}#}
+    {#var sarima_com_pr={{ sarima_com_pr|safe }}#}
+    {#var pyl_com_ab={{ pyl_com_ab|safe }}#}
+    {#var pyu_com_ab={{ pyu_com_ab|safe }}#}
+    {#var pyl_com_pr={{ pyl_com_pr|safe }}#}
+    {#var pyu_com_pr={{ pyu_com_pr|safe }}#}
     var act={{ actual_dmh }}
-    if(x<8)
+    if(x<10)
         {
             document.getElementById('show4').style.display='none';
-            var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+            var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
             var b=act[x-1];
             var pe=(100*Math.abs(a-b)/b).toFixed(2);
             document.getElementById("t42").innerHTML=String(a);
@@ -259,38 +265,39 @@ var dmhup = function (){
             document.getElementById("t43").innerHTML=String(pe);
             document.getElementById("t4").style.display='block';
             document.getElementById("demom4").innerHTML="Where Comorbidity may be absent for "+
-                String(Math.ceil((sarima_cin_j[totdays+parseInt(x)-1])*(0.32)/100))+" And present for "+
-            String(Math.floor((sarima_cin_j[totdays+parseInt(x)-1])*(0.68)/100));
+            String(Math.ceil((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_ab[parseInt(x)-1])/100))+
+            " And present for "+
+            String(Math.floor((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_pr[parseInt(x)-1])/100));
         }
-    else  if (x<11){
+    if (x<11){
         document.getElementById("t4").style.display='none';
         document.getElementById("demo4").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x);
         document.getElementById("ppp4").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
-         document.getElementById('show4').style.display='block';
-         document.getElementById("demom4").innerHTML="Where Comorbidity may be absent for "+
-            String(Math.ceil((sarima_cin_j[totdays+parseInt(x)-1])*(32)/100))+
-            " And present for "+
-            String(Math.floor((sarima_cin_j[totdays+parseInt(x)-1])*(68)/100));
+        {#document.getElementById("demom4").innerHTML="Where Comorbidity may be absent for "+#}
+        {#    String(Math.ceil((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_ab[parseInt(x)-1])/100))+#}
+        {#    " And present for "+#}
+        {#    String(Math.floor((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_pr[parseInt(x)-1])/100));#}
+        document.getElementById('show4').style.display='block';
 
     }
-    else if (x<41){
+    else if (x<40){
         document.getElementById("t4").style.display='none';
         document.getElementById("demo4").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" may Range from";
         document.getElementById("ppp4").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+        {#document.getElementById("demom4").innerHTML="Where Comorbidity may be absent for ("#}
+        {#    +String(Math.ceil((pyl_cin_j[parseInt(x)-11])*pyl_com_ab[parseInt(x)-11]/100))+" , "#}
+        {#    +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*pyu_com_ab[parseInt(x)-11]/100)) +") and present for ("+#}
+        {#    String(Math.ceil((pyl_cin_j[parseInt(x)-11])*pyl_com_pr[parseInt(x)-11]/100))+" , "#}
+        {#    +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*pyu_com_pr[parseInt(x)-11]/100))+" )";#}
         document.getElementById('show4').style.display='block';
-        document.getElementById("demom4").innerHTML="Where Comorbidity may be absent for ("
-            +String(Math.ceil((pyl_cin_j[parseInt(x)-11])*0.28))+" , "
-            +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*0.32)) +") and present for ("+
-            String(Math.ceil((pyl_cin_j[parseInt(x)-11])*0.72))+" , "
-            +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*0.68))+" )";
     }
     else{
         document.getElementById("t4").style.display='none';
-        document.getElementById("demo4").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo4").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp4").innerHTML=" ";
+        {#document.getElementById("demom4").innerHTML=" ";#}
         document.getElementById('show4').style.display='block';
-        document.getElementById("demom4").innerHTML=" ";
     }
     chartydm(x,"chartContainer4");
 };
@@ -299,11 +306,17 @@ var dmhup1 = function (){
     var sarima_cin_j={{ sarima_dmh|safe }}
     var pyl_cin_j={{ pyl_dmh|safe }}
     var pyu_cin_j={{ pyu_dmh|safe }}
+    {#var sarima_com_ab={{ sarima_com_ab|safe }}#}
+    {#var sarima_com_pr={{ sarima_com_pr|safe }}#}
+    {#var pyl_com_ab={{ pyl_com_ab|safe }}#}
+    {#var pyu_com_ab={{ pyu_com_ab|safe }}#}
+    {#var pyl_com_pr={{ pyl_com_pr|safe }}#}
+    {#var pyu_com_pr={{ pyu_com_pr|safe }}#}
     var act={{ actual_dmh }}
-    if(x<8)
+    if(x<10)
         {
             document.getElementById('show10').style.display='none';
-            var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+            var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
             var b=act[x-1];
             var pe=(100*Math.abs(a-b)/b).toFixed(2);
             document.getElementById("t102").innerHTML=String(a);
@@ -311,38 +324,39 @@ var dmhup1 = function (){
             document.getElementById("t103").innerHTML=String(pe);
             document.getElementById("t10").style.display='block';
             document.getElementById("demom10").innerHTML="Where Comorbidity may be absent for "+
-                String(Math.ceil((sarima_cin_j[totdays+parseInt(x)-1])*(0.32)/100))+" And present for "+
-            String(Math.floor((sarima_cin_j[totdays+parseInt(x)-1])*(0.68)/100));
+            String(Math.ceil((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_ab[parseInt(x)-1])/100))+
+            " And present for "+
+            String(Math.floor((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_pr[parseInt(x)-1])/100));
         }
-    else if (x<11){
+    if (x<11){
         document.getElementById("t10").style.display='none';
         document.getElementById("demo10").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x);
         document.getElementById("ppp10").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
-        document.getElementById("demom10").innerHTML="Where Comorbidity may be absent for "+
-            String(Math.ceil((sarima_cin_j[totdays+parseInt(x)-1])*(32)/100))+
-            " And present for "+
-            String(Math.floor((sarima_cin_j[totdays+parseInt(x)-1])*(68)/100));
+        {#document.getElementById("demom10").innerHTML="Where Comorbidity may be absent for "+#}
+        {#    String(Math.ceil((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_ab[parseInt(x)-1])/100))+#}
+        {#    " And present for "+#}
+        {#    String(Math.floor((sarima_cin_j[61+parseInt(x)-1])*(sarima_com_pr[parseInt(x)-1])/100));#}
         document.getElementById('show10').style.display='block';
 
     }
-    else if (x<41){
+    else if (x<40){
         document.getElementById("t10").style.display='none';
         document.getElementById("demo10").innerHTML="Predicted Deaths In Maharashtra by Day "+String(x)+" may Range from";
         document.getElementById("ppp10").innerHTML="("+String(Math.ceil(pyl_cin_j[parseInt(x)-11]))+" , "
             +String(Math.ceil(pyu_cin_j[parseInt(x)-11])) +")";
+        {#document.getElementById("demom10").innerHTML="Where Comorbidity may be absent for ("#}
+        {#    +String(Math.ceil((pyl_cin_j[parseInt(x)-11])*pyl_com_ab[parseInt(x)-11]/100))+" , "#}
+        {#    +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*pyu_com_ab[parseInt(x)-11]/100)) +") and present for ("+#}
+        {#    String(Math.ceil((pyl_cin_j[parseInt(x)-11])*pyl_com_pr[parseInt(x)-11]/100))+" , "#}
+        {#    +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*pyu_com_pr[parseInt(x)-11]/100))+" )";#}
         document.getElementById('show10').style.display='block';
-        document.getElementById("demom10").innerHTML="Where Comorbidity may be absent for ("
-            +String(Math.ceil((pyl_cin_j[parseInt(x)-11])*0.28))+" , "
-            +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*0.32)) +") and present for ("+
-            String(Math.ceil((pyl_cin_j[parseInt(x)-11])*0.72))+" , "
-            +String(Math.ceil((pyu_cin_j[parseInt(x)-11])*0.68))+" )";
     }
     else{
         document.getElementById("t10").style.display='none';
-        document.getElementById("demo10").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo10").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp10").innerHTML=" ";
-        document.getElementById('show10').style.display='block';
         document.getElementById("demom10").innerHTML=" ";
+        document.getElementById('show10').style.display='block';
     }
     chartydm(x,"chartContainer10");
 };
@@ -352,9 +366,9 @@ var gmaleup = function (){
     var pyl_cin_j={{ pyl_gmale|safe }}
     var pyu_cin_j={{ pyu_gmale|safe }}
     var act={{ actual_gmale }}
-    if(x<8)
+    if(x<10)
     {   document.getElementById('show5').style.display='none';
-        var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+        var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
         var b=act[x-1];
         var pe=(100*Math.abs(a-b)/b).toFixed(2);
         document.getElementById("t52").innerHTML=String(a);
@@ -363,7 +377,7 @@ var gmaleup = function (){
         document.getElementById("t5").style.display='block';
 
      }
-      else if (x<11){
+    if (x<11){
         document.getElementById("t5").style.display='none';
         document.getElementById("demo5").innerHTML="Predicted Cases In India by Day "+String(x);
         document.getElementById("ppp5").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
@@ -378,7 +392,7 @@ var gmaleup = function (){
     }
     else{
         document.getElementById("t5").style.display='none';
-        document.getElementById("demo5").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo5").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp5").innerHTML=" ";
         document.getElementById("show5").style.display='block';
     }
@@ -390,9 +404,9 @@ var gmaleup1 = function (){
     var pyl_cin_j={{ pyl_gmale|safe }}
     var pyu_cin_j={{ pyu_gmale|safe }}
     var act={{ actual_gmale }}
-    if(x<8)
+    if(x<10)
     {   document.getElementById('show11').style.display='none';
-        var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+        var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
         var b=act[x-1];
         var pe=(100*Math.abs(a-b)/b).toFixed(2);
         document.getElementById("tt112").innerHTML=String(a);
@@ -401,7 +415,7 @@ var gmaleup1 = function (){
         document.getElementById("tt11").style.display='block';
 
      }
-    else if (x<11){
+    if (x<11){
         document.getElementById("tt11").style.display='none';
         document.getElementById("demo11").innerHTML="Predicted Cases In India by Day "+String(x);
         document.getElementById("ppp11").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
@@ -416,7 +430,7 @@ var gmaleup1 = function (){
     }
     else{
         document.getElementById("tt11").style.display='none';
-        document.getElementById("demo11").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo11").innerHTML="Prediction only possible for 40 days from 22nd June 2020";
         document.getElementById("ppp11").innerHTML=" ";
         document.getElementById("show11").style.display='block';
     }
@@ -428,9 +442,9 @@ var gfemaleup = function (){
     var pyl_cin_j={{ pyl_gfemale|safe }}
     var pyu_cin_j={{ pyu_gfemale|safe }}
     var act={{ actual_gfemale }}
-    if(x<8)
+    if(x<10)
     {   document.getElementById('show6').style.display='none';
-        var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+        var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
         var b=act[x-1];
         var pe=(100*Math.abs(a-b)/b).toFixed(2);
         document.getElementById("t62").innerHTML=String(a);
@@ -454,7 +468,7 @@ var gfemaleup = function (){
     }
     else{
         document.getElementById("t6").style.display='none';
-        document.getElementById("demo6").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo6").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp6").innerHTML=" ";
         document.getElementById("show6").style.display='block';
     }
@@ -466,9 +480,9 @@ var gfemaleup1 = function (){
     var pyl_cin_j={{ pyl_gfemale|safe }}
     var pyu_cin_j={{ pyu_gfemale|safe }}
     var act={{ actual_gfemale }}
-    if(x<8)
+    if(x<10)
     {   document.getElementById('show12').style.display='none';
-        var a=Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]);
+        var a=Math.ceil(sarima_cin_j[61+parseInt(x)-1]);
         var b=act[x-1];
         var pe=(100*Math.abs(a-b)/b).toFixed(2);
         document.getElementById("tt122").innerHTML=String(a);
@@ -477,7 +491,7 @@ var gfemaleup1 = function (){
         document.getElementById("tt12").style.display='block';
 
      }
-    else if (x<11){
+    if (x<11){
         document.getElementById("tt12").style.display='none';
         document.getElementById("demo12").innerHTML="Predicted Cases In India by Day "+String(x);
         document.getElementById("ppp12").innerHTML=String(Math.ceil(sarima_cin_j[totdays+parseInt(x)-1]));
@@ -492,7 +506,7 @@ var gfemaleup1 = function (){
     }
     else{
         document.getElementById("tt12").style.display='none';
-        document.getElementById("demo12").innerHTML="Prediction only possible for 40 days from 22nd June 2020 till 1st August";
+        document.getElementById("demo12").innerHTML="Prediction only possible for 40 days from 31st May 2020";
         document.getElementById("ppp12").innerHTML=" ";
         document.getElementById("show12").style.display='block';
     }
@@ -505,17 +519,18 @@ function charty(x,cnt) {
     var d = new Date("2020-4-1");
 
     var arr=[];
-    var  arr2=[];
+    var arr2=[];
     var enddate=new Date("2020-8-1");
+    var  act_din={{ actual_cin }}
     var sarima_cin_j={{ sarima_cin|safe }}
     var pyhat_cin_j={{ pyhat_cin|safe }}
-    var  act_din={{ actual_cin }}
     for(var i=0;i<totdays+parseInt(x); i++)
     {
-        if(i>=totdays && i<totdays+8) {
-            var obj2 = {x: new Date(d), y: act_din[i - totdays]};
-            arr2.push(obj2);
-        }
+        if(i>60 && i<76)
+            {
+                    var obj2={x: new Date(d), y: act_din[i-61] };
+                    arr2.push(obj2);
+            }
         if (d > enddate) {break;}
         if (i < totdays+10) { var obj={x: new Date(d), y: Math.ceil(sarima_cin_j[i]) }; }
         else { var obj={x: new Date(d), y: Math.ceil(pyhat_cin_j[i-totdays-10]) };}
@@ -577,17 +592,18 @@ function chartym(x,cnt) {
     x = 0;
     }
     var d = new Date("2020-4-1");
-    var arr2=[];
+
     var arr=[];
+    var arr2=[];
     var enddate=new Date("2020-8-1");
+    var act_din={{ actual_cmh }}
     var sarima_cmh_j={{ sarima_cmh|safe }}
     var pyhat_cmh_j={{ pyhat_cmh|safe }}
-    var act_din={{ actual_cmh }}
     for(var i=0;i<totdays+parseInt(x); i++)
     {
-        if(i>=totdays && i<totdays+8)
+        if(i>60 && i<76)
             {
-                    var obj2={x: new Date(d), y: act_din[i-totdays] };
+                    var obj2={x: new Date(d), y: act_din[i-61] };
                     arr2.push(obj2);
             }
         if (d > enddate) {break;}
@@ -604,7 +620,8 @@ var momo=[{
 		showInLegend: true,
         color:"#f96ac0",
 		dataPoints: arr
-	},{
+	}
+    ,{
 		name: "Actual",
 		type: "line",
 		yValueFormatString: "#0.## cases",
@@ -612,7 +629,7 @@ var momo=[{
         color:"#3c3df9",
 		dataPoints: arr2
 	 }
-];
+    ];
 var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
@@ -652,17 +669,17 @@ function chartyd(x,cnt) {
     var arr=[];
     var arr2=[];
     var enddate=new Date("2020-8-1");
+    var act_din={{ actual_din }}
     var sarima_din_j={{ sarima_din|safe }}
     var pyhat_din_j={{ pyhat_din|safe }}
-    var act_din={{ actual_din }}
     for(var i=0;i<totdays+parseInt(x); i++)
     {
-        if(i>=totdays && i<totdays+8)
+        if (d > enddate) {break;}
+        if(i>60 && i<76)
             {
-                    var obj2={x: new Date(d), y: act_din[i-totdays] };
+                    var obj2={x: new Date(d), y: act_din[i-61] };
                     arr2.push(obj2);
             }
-        if (d > enddate) {break;}
         if (i < totdays+10) {
             var obj={x: new Date(d), y: Math.ceil(sarima_din_j[i]) };
         }
@@ -679,14 +696,15 @@ var momo=[{
         color:"#ff6681",
 		dataPoints: arr
 	}
-        ,{
+    ,{
         name: "Actual",
 		type: "line",
 		yValueFormatString: "#0.## deaths",
 		showInLegend: true,
         color:'#b8ba34',
 		dataPoints: arr2
- }];
+ }
+    ];
 var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
@@ -721,19 +739,20 @@ function chartydm(x,cnt) {
     x = 0;
     }
     var d = new Date("2020-4-1");
+
+    var arr=[];
     var arr2=[];
     var act_din={{ actual_dmh }}
-    var arr=[];
     var enddate=new Date("2020-8-1");
     var sarima_dmh_j={{ sarima_dmh|safe }}
     var pyhat_dmh_j={{ pyhat_dmh|safe }}
     for(var i=0;i<totdays+parseInt(x); i++)
     {
-        if(i>=totdays && i<totdays+8)
-            {
-                    var obj2={x: new Date(d), y: act_din[i-totdays] };
-                    arr2.push(obj2);
-            }
+           {#if(i>60 && i<76)#}
+           {# {#}
+           {#         var obj2={x: new Date(d), y: act_din[i-61] };#}
+           {#         arr2.push(obj2);#}
+           {# }#}
         if (d > enddate) {break;}
         if (i < totdays+10) { var obj={x: new Date(d), y: Math.ceil(sarima_dmh_j[i]) }; }
         else { var obj={x: new Date(d), y: Math.ceil(pyhat_dmh_j[i-totdays-10]) };}
@@ -748,7 +767,8 @@ var momo=[{
 		showInLegend: true,
         color:"#f97c48",
 		dataPoints: arr
-	},{
+	}
+    ,{
 		name: "Actual",
 		type: "line",
 		yValueFormatString: "#0.## deaths",
@@ -756,7 +776,7 @@ var momo=[{
         color:"#6977f9",
 		dataPoints: arr2
 	 }
-];
+    ];
 var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
@@ -791,17 +811,18 @@ function chartygm(x,cnt) {
     x = 0;
     }
     var d = new Date("2020-4-1");
+
     var arr=[];
     var arr2=[];
     var enddate=new Date("2020-8-1");
+    var act_gmale={{ actual_gmale }}
     var sarima_gmale_j={{ sarima_gmale|safe }}
     var pyhat_gmale_j={{ pyhat_gmale|safe }}
-    var act_gmale={{ actual_gmale }}
     for(var i=0;i<totdays+parseInt(x); i++)
     {
-        if(i>=totdays && i<totdays+8)
+        if(i>60 && i<76)
             {
-                    var obj2={x: new Date(d), y: act_gmale[i-totdays] };
+                    var obj2={x: new Date(d), y: act_gmale[i-61] };
                     arr2.push(obj2);
             }
         if (d > enddate) {break;}
@@ -819,14 +840,15 @@ var momo=[{
         color:'#cf971b',
 		dataPoints: arr
 	}
-        ,{
+    ,{
 		name: "Actual",
 		type: "line",
 		yValueFormatString: "#0.## cases",
 		showInLegend: true,
         color:'#26cf24',
 		dataPoints: arr2
-	 }];
+	 }
+    ];
 var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
@@ -863,16 +885,16 @@ function chartygf(x,cnt) {
     }
     var d = new Date("2020-4-1");
     var arr=[];
-    var arr2=[];
+    var  arr2=[];
+    var  act_gfemale={{ actual_gfemale }}
     var enddate=new Date("2020-8-1");
     var sarima_gfemale_j={{ sarima_gfemale|safe }}
     var pyhat_gfemale_j={{ pyhat_gfemale|safe }}
-    var  act_gfemale={{ actual_gfemale }}
     for(var i=0;i<totdays+parseInt(x); i++)
     {
-        if(i>=totdays && i<totdays+8)
+        if(i>60 && i<76)
             {
-                    var obj2={x: new Date(d), y: act_gfemale[i-totdays] };
+                    var obj2={x: new Date(d), y: act_gfemale[i-61] };
                     arr2.push(obj2);
             }
         if (d > enddate) {break;}
@@ -897,7 +919,8 @@ var momo=[{
 		showInLegend: true,
         color:'#f0eb1f',
 		dataPoints: arr2
-	  }];
+	  }
+    ];
 var chart = new CanvasJS.Chart(cnt, {
 
 	animationEnabled: true,
