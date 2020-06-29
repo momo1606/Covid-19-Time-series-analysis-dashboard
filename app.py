@@ -16,8 +16,8 @@ def home():
     # sarima_com_pr, pyhat_com_pr, pyl_com_pr, pyu_com_pr = csvdata.fetchpredcom('com_pr')
     actual_cin=[439005,454973,471895,489191,507743,527649,547108]
     actual_cmh=[134146,137260,141150,145991,151015,156333,161826]
-    actual_din=[13987,14452,14870,15277,15661,16071,16451]
-    actual_dmh=[6206,6281,6353,6462,6553,6639,6699]
+    actual_din=[12341,12806,13224,13631,14015,14425,14805]
+    actual_dmh=[4943,5018,5090,5199,5290,5376,5436]
     actual_gmale=[81682,83996,85966,88304,91289,94410,97647]
     actual_gfemale=[51350,52774,54031,55592,57476,59397,61494]
     return render_template('index.html',sarima_cin=json.dumps(sarima_cin),pyhat_cin=json.dumps(pyhat_cin),
