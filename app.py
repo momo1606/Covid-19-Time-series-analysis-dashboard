@@ -14,12 +14,12 @@ def home():
     sarima_gfemale, pyhat_gfemale, pyl_gfemale, pyu_gfemale = csvdata.fetchpred('gfemale')
     # sarima_com_ab, pyhat_com_ab, pyl_com_ab, pyu_com_ab = csvdata.fetchpredcom('com_ab')
     # sarima_com_pr, pyhat_com_pr, pyl_com_pr, pyu_com_pr = csvdata.fetchpredcom('com_pr')
-    actual_cin=[439005,454973,471895,489191,507743,527649,547108]
-    actual_cmh=[134146,137260,141150,145991,151015,156333,161826]
-    actual_din=[12341,12806,13224,13631,14015,14425,14805]
-    actual_dmh=[4943,5018,5090,5199,5290,5376,5436]
-    actual_gmale=[81682,83996,85966,88304,91289,94410,97647]
-    actual_gfemale=[51350,52774,54031,55592,57476,59397,61494]
+    actual_cin=[439005,454973,471895,489191,507743,527649,547108,565630]
+    actual_cmh=[134146,137260,141150,145991,151015,156333,161826,167183]
+    actual_din=[12341,12806,13224,13631,14015,14425,14805,15223]
+    actual_dmh=[4943,5018,5090,5199,5290,5376,5436,5514]
+    actual_gmale=[81682,83996,85966,88304,91289,94410,97647,100956]
+    actual_gfemale=[51350,52774,54031,55592,57476,59397,61494,63689]
     return render_template('index.html',sarima_cin=json.dumps(sarima_cin),pyhat_cin=json.dumps(pyhat_cin),
                            pyl_cin=json.dumps(pyl_cin), pyu_cin=json.dumps(pyu_cin),sarima_cmh=json.dumps(sarima_cmh),
                            pyhat_cmh=json.dumps(pyhat_cmh),pyl_cmh=json.dumps(pyl_cmh), pyu_cmh=json.dumps(pyu_cmh),
